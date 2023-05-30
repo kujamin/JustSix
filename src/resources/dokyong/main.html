@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+		<h1>Checkout Form</h1>
+		<form class="form cf">
+			<h2>Choose a Genre:</h2>
+			<section class="plan cf genre check_con">
+				
+				<input type="radio" name="radio1" id="RnB" value="RnB" checked><label class="free-label four col check_Box box01" for="RnB">
+					<p class="keyword">R&B</p>
+				</label>
+
+				<input type="radio" name="radio1" id="rock_metal" value="rock_metal"><label class="free-label four col check_Box box02" for="rock_metal">
+					<p class="keyword">${dsifuh}</p>
+				</label>
+
+
+				<input type="radio" name="radio1" id="rap_hiphop" value="rap_hiphop"><label class="free-label four col check_Box box03" for="rap_hiphop">
+					<p class="keyword">rap_hiphop</p>
+				</label>
+
+
+				<input type="radio" name="radio1" id="ballad" value="ballad"><label class="free-label four col check_Box box04" for="ballad">
+					<p class="keyword">ballad</p>
+				</label>
+
+				<input type="radio" name="radio1" id="indie" value="indie"><label class="free-label four col check_Box box05" for="indie">
+					<p class="keyword">indie</p>
+				</label>
+
+				<input type="radio" name="radio1" id="pop" value="pop"><label class="free-label four col check_Box box06" for="pop">
+					<p class="keyword">pop</p>
+				</label>
+
+			</section>
+			<section class="payment-plan cf">
+				<h2>Select a payment plan:</h2>
+				<input type="radio" name="radio2" id="monthly" value="monthly" checked><label class="monthly-label four col box box4" for="monthly">Monthly</label>
+				<input type="radio" name="radio2" id="yearly" value="yearly"><label class="yearly-label four col box box5" for="yearly">Yearly</label>
+			</section>
+			<section class="payment-type cf">
+				<h2>Select a payment type:</h2>
+				<input type="radio" name="radio3" id="credit" value="credit"><label class="credit-label four col box box6" for="credit">Credit Card</label>
+				<input type="radio" name="radio3" id="debit" value="debit"><label class="debit-label four col box box7" for="debit">Debit Card</label>
+				<input type="radio" name="radio3" id="paypal" value="paypal" checked><label class="paypal-label four col box box8" for="paypal">Paypal</label>
+			</section>	
+			<input class="submit" type="submit" value="Submit">		
+		</form>
+	</div>
+</body>
+</html>
