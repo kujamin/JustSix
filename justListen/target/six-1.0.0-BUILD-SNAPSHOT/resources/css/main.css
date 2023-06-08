@@ -1,0 +1,251 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+h1{
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #2fcc71;
+	max-width: 40%;
+	margin: 20px auto;
+}
+
+/* CONTAINERS */
+
+.form{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.container {width: 100%;}
+
+
+
+
+/* CLEARFIX */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/* FORM */
+
+.form .plan input, .form .payment-plan input, .form .payment-type input{
+	display: none;
+}
+
+
+
+
+
+.form .plan input:checked + label:after, form .payment-plan input:checked + label:after, .form .payment-type input:checked + label:after{
+	content: "\002B";
+	color: #fff;
+	font-weight: 900;
+	font-size: 26px;
+
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 100%;
+	background-color: #6359ee;
+	z-index: 999;
+	position: absolute;
+	
+	top: -5px;
+	right: -5px;
+}
+
+.submit{
+	padding: 15px 60px;
+	display: inline-block;
+	border: none;
+	margin: 20px 0;
+	background-color: #2fcc71;
+	color: #fff;
+	border: 2px solid #333;
+	font-size: 18px;
+	-webkit-transition: transform 0.3s ease-in-out;
+	-o-transition: transform 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out;
+}
+
+.submit:hover{
+	cursor: pointer;
+	transform: rotateX(360deg);
+}
+.check_con{
+	width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.check_Box{
+    text-align: center;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 20px;
+
+    background-color: rgb(255, 255, 255);
+
+    position: relative;
+
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid white;
+    cursor: pointer;
+	transition: 1s;
+
+}
+
+.check_Box::before{
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
+    border-radius: 15px;
+    border: 4px solid white;
+}
+
+
+.form .plan input:checked + label::before, 
+.form .payment-plan input:checked + label::before, 
+.form .payment-type input:checked + label::before{
+    opacity: 0;
+    transition: .5s;
+    border: 2px solid rgb(128, 82, 121);
+}
+
+.check_Box p{
+	color: #fff;
+	width: 300px;
+	line-height: 150px;
+	text-align: center;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.box01{
+    background-image: url(../img/main/main_01_RnB.jpg) ;
+}
+.box02{
+    background-image: url(../img/main/main_02_Rock.jpg) ;
+}
+.box03{
+    background-image: url(../img/main/main_03_hiphop.jpg) ;
+}
+.box04{
+    background-image: url(../img/main/main_04_ballad.jpg) ;
+}
+.box05{
+    background-image: url(../img/main/main_05_indie.jpg) ;
+}
+.box06{
+    background-image: url(../img/main/main_06_pop.jpg) ;
+}
+.box07{
+    background-image: url(../img/main/main_07_yusanso.jpg);
+}
+.box08{
+    background-image: url(../img/main/main_08_musanso.jpg) ;
+}
+.box09{
+    background-image: url(../img/main/main_09_AM02.jpg) ;
+}
+.box10{
+    background-image: url(../img/main/main_10_bulgum.jpg) ;
+}
+.box11{
+    background-image: url(../img/main/main_11_way-go-home.jpg) ;
+}
+.box12{
+    background-image: url(../img/main/main_12_drive.jpg) ;
+}
+.box13{
+    background-image: url(../img/main/main_13_travel.jpg) ;
+}
+.box14{
+    background-image: url(../img/main/main_14_post-apoca.jpg) ;
+}
+.box15{
+    background-image: url(../img/main/main_15_alone.jpg) ;
+}
+.box16{
+    background-image: url(../img/main/main_16_sad.jpg) ;
+}
+.box17{
+    background-image: url(../img/main/main_17_flutter.jpg) ;
+}
+.box18{
+    background-image: url(../img/main/main_18_angry.jpg) ;
+}
+.box19{
+    background-image: url(../img/main/main_19_happy.jpg) ;
+}
+.box20{
+    background-image: url(../img/main/main_20_rainy.jpg) ;
+}
+.box21{
+    background-image: url(../img/main/main_21_snow.jpg) ;
+}
+.box22{
+    background-image: url(../img/main/main_22_sunny.jpg) ;
+}
+.box23{
+    background-image: url(../img/main/main_23_cloudy.jpg) ;
+}
+.box24{
+    background-image: url(../img/main/main_24_hit.jpg) ;
+}
+.box25{
+    background-image: url(../img/main/main_25_popular.jpg) ;
+}
+.box26{
+    background-image: url(../img/main/main_26_cult.jpg) ;
+}
+.box27{
+    background-image: url(../img/main/main_27_love.jpg) ;
+}
+.box28{
+    background-image: url(../img/main/main_28_nolove.jpg) ;
+}
+.box29{
+    background-image: url(../img/main/main_29_confidence.jpg) ;
+}
+.box30{
+    background-image: url(../img/main/main_30_s_Anger.jpg) ;
+}
+.box31{
+    background-image: url(../img/main/main_31_korea.jpg) ;
+}
+.box32{
+    background-image: url(../img/main/main_32_japan.jpg) ;
+}
+.box33{
+    background-image: url(../img/main/main_33_other.jpg) ;
+}
