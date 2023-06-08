@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Hello, World</title>
+    <title>index</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <img src="/resources/img/calmdownman.jpg">
+    <h1>1차 프로젝트 테스트</h1>
+    <ul>
+        <li><a href="/intro">인트로</a></li>
+        <li><a href="/member/save">회원가입</a></li>
+        <li><a href="/member/login">로그인</a></li>
+        <li><a href="/member/">회원목록 조회</a></li>
+    </ul>
+
 </body>
 </html>

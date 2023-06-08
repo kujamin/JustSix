@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+    <!-- parameterType 은 풀 패키지 명을 명시해야함. 하지만 config.xml 에서 설정 추가-->
+    <insert id="save" parameterType="member">
+        INSERT INTO MEMBER (email, password, name)
+        VALUES (#{email}, #{password}, #{name})
+    </insert>
+    <!-- SELECT 구문을 사용할땐 resultType이 항상 따라옴-->
+    <select id="login" parameterType="member" resultType="member">
+        SELECT * FROM MEMBER WHERE email=#{email} and password=#{password}
+    </select>
+</mapper>
