@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="justListen">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/justListen.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
