@@ -3,87 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="author" content="User">
-<title>회원가입</title>
 <link rel="stylesheet" type="text/css" href="../css/membership.css">
+
+<title>회원가입</title>
 </head>
 
-<script src="../js/mebership.js"></script>
 
-	<body>
-		<div id="con">
-			<div id="login">
-				<div id="login_form">
-					<!--로그인 폼-->
-					<form>
-						<h3 class="login" style="letter-spacing: -1px;">Just Listen</h3>
-						<hr>
 
-						<label for="email">
-							<p style="text-align: left; font-size: 12px; color: #666">E-mail</p>
-							<input id="email" name="email" type="text" class="size" required="required">
-							&nbsp;&nbsp; <input type="button" value="     중복확인     "
-							class="btn">
-						</label>
-						<!--이메일-->
+<form action="" method="post" onsubmit="return validateForm()">
 
-						<label for="userEmailIdentified"> <!-- <span>ID_Check</span> -->
-							<p style="text-align: left; font-size: 12px; color: #666">E-mail
-								인증번호 입력</p> <input id="userEmailIdentified" name="userEmailIdentified" type="text" class="size" required="required">
-							&nbsp;&nbsp; <input type="button" value=" 인증번호 전송 " class="btn">
+  <body>
+    <div id="con">
+      <div id="login">
+        <div id="login_form">
+          <!--로그인 폼-->
+          <form>
+            <h3 class="login" style="letter-spacing: -1px;">Just Listen</h3>
 
-						</label>
-						<!--이메일 인증번호 입력-->
+            <!-- <p>
+            <input type="submit" value="Sign in with Google" class="btn" style="background-color:#217Af0">
+        </p> 구글로 로그인-->
 
-						<label for="pw"> <!-- <span>PW</span> -->
-							<p style="text-align: left; font-size: 12px; color: #666">Password
-							</p> <input name="pw" type="password" id="pw" class="size wide"
-							required="required">
-						</label>
-						<!--비밀번호-->
+            <hr>
+            <label> <!-- <span>ID</span> -->
+              <p style="text-align: left; font-size: 12px; color: #666">E-mail</p>
+              <input type="text" class="size"> &nbsp;&nbsp; <input
+              type="button" value="     중복확인     " class="btn">
+            </label>
+            <!--이메일-->
 
-						<label for="rePasswd"> <!-- <span>PW_Check</span> -->
-							<p style="text-align: left; font-size: 12px; color: #666">Password
-								확인</p> <input name="rePasswd" type="password" id="rePasswd"
-							class="size wide" required="required"> <span
-							class="error-message" id="password_error"></span>
-						</label>
-						<!--비밀번호 확인-->
+            <label> <!-- <span>ID_Check</span> -->
+              <p style="text-align: left; font-size: 12px; color: #666">E-mail
+                인증번호 입력</p> <input type="text" class="size"> &nbsp;&nbsp; <input
+              type="button" value=" 인증번호 전송 " class="btn">
 
-						<label for="userName"> <!-- <span>Name</span> -->
-							<p style="text-align: left; font-size: 12px; color: #666">이름</p>
-							<input name="userName" id="userName" type="text" class="size wide" required="required">
-	
-						</label>
-						<!--이름-->
+            </label>
+            <!--이메일 인증번호 입력-->
 
-						<label>
-							<p class="h-zero"
-								style="text-align: left; font-size: 12px; color: #666"for "agree">이용약관동의</p>
-							<br />
-						</label>
+            <label for="password"> <!-- <span>PW</span> -->
+              <p style="text-align: left; font-size: 12px; color: #666">Password
+              </p> <input placeholder="비밀번호는 8이상 12자 이하로 설정바랍니다." type="password"
+              class="size wide" id="password" name="password" required>
+              <span class="error-message" id="password_error"></span>
+            </label>
+            <!--비밀번호-->
 
-						<p style="text-align: left; font-size: 12px; color: #666">
-							<input type="radio" name="mail" value="Y" id="m_y"
-								checked="checked"> <label for="m_y">메일 수신</label>
-						</p>
+            <label for="confirm_password"> <!-- <span>PW_Check</span> -->
+              <p style="text-align: left; font-size: 12px; color: #666">Password
+                확인</p> <input type="password" class="size wide"
+              id="confirm_password" name="confirm_password" required
+              oninput="validateForm()"> <span class="error-message"
+              id="confirm_password_error"></span>
+            </label>
+            <!--비밀번호 확인-->
 
-						<p style="text-align: left; font-size: 12px; color: #666">
-							<input type="radio" name="mail" value="N" id="m_n"> <label
-								for="m_n">메일 수신 안 함</label>
-						</p>
+            <label> <!-- <span>Name</span> -->
+              <p style="text-align: left; font-size: 12px; color: #666">이름</p>
+              <input type="text" class="size wide" required>
+            </label>
+            <!--이름-->
 
-						<p>
-							<input type="submit" value="Create Account" class="btnn">
-						</p>
-					
-					<hr>
-					<p class="find">
-						<span><a href="Login.html">로그인 페이지로 이동</a></span>
-					</p>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!--con-->
-	</body>
+            <label>
+              <p class="h-zero"
+                style="text-align: left; font-size: 12px; color: #666"for "agree">이용약관동의</p>
+              <br />
+            </label>
+            <p class="find">
+              <span><a href="agree.html">이용약관 자세히 읽기</a></span>
+            </p>
+            <p style="text-align: left; font-size: 12px; color: #666">
+              <input type="radio" name="mail" value="Y" id="m_y" required>
+              <label for="m_y">메일 수신</label>
+            </p>
+
+            <p style="text-align: left; font-size: 12px; color: #666">
+              <input type="radio" name="mail" value="N" id="m_n" required>
+              <label for="m_n">메일 수신 안 함</label>
+            </p>
+
+
+
+
+
+
+            <p>
+              <input type="submit" value="Create Account" class="btnn">
+
+            </p>
+          </form>
+
+
+          <hr>
+          <p class="find">
+            <span><a href="Login.html">로그인 페이지로 이동</a></span>
+          </p>
+        </div>
+        <div></div>
+        <!--con-->
+        
+        <script>
+
+  function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirm_password = document.getElementById("confirm_password").value;
+    var password_error = document.getElementById("password_error");
+    var confirm_password_error = document
+        .getElementById("confirm_password_error");
+
+    /*     if (password.trim().length === 0) {
+     password_error.innerHTML = "";
+     } else if (password.length < 8 || password.length > 12) {
+     password_error.innerHTML = "비밀번호는 8이상 12자 이하로 설정바랍니다.";
+     } else {
+     password_error.innerHTML = "";
+     } */
+
+    if (confirm_password.trim().length === 0) {
+      confirm_password_error.innerHTML = "";
+    } else if (password !== confirm_password) {
+      confirm_password_error.innerHTML = "비밀번호가 일치하지 않습니다.";
+    } else {
+      confirm_password_error.innerHTML = "";
+    }
+
+    if (password_error.innerHTML === ""
+        && confirm_password_error.innerHTML === "") {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function clearPasswordError() {
+    var password_error = document.getElementById("password_error");
+    var confirm_password_error = document
+        .getElementById("confirm_password_error");
+
+    password_error.innerHTML = "";
+    confirm_password_error.innerHTML = "";
+  }
+</script>
+        
+  </body>
 </html>
