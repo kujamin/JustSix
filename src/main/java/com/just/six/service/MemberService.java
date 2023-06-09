@@ -4,6 +4,8 @@ import com.just.six.dto.MemberDTO;
 import com.just.six.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MemberService {
     private final MemberRepository memberRepository;
@@ -23,5 +25,9 @@ public class MemberService {
         } else {
             return false;
         }
+    }
+
+    public List<MemberDTO> findAll() {
+        return memberRepository.findAll();
     }
 }
