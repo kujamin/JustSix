@@ -246,7 +246,6 @@ html.fp-enabled,
 
 /* sec02 */
 #section2 div{
-    border: 1px solid magenta;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -258,7 +257,6 @@ html.fp-enabled,
     overflow: hidden;
 }
 
-
 .sec02_desc{
     height: 400px;
     width: 400px;
@@ -269,8 +267,4 @@ html.fp-enabled,
 
 .sec03_desc{
     margin-top: 30px;
-}
-
-.sec04_bg{
-    border: 1px solid magenta;
 }
