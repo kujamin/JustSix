@@ -1,45 +1,91 @@
 /* Reset CSS
  * --------------------------------------- */
-*{
-    margin: 0;
-    padding: 0;
+* {
+	margin: 0;
+	padding: 0;
 }
 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
-form,fieldset,input,textarea,p,blockquote,th,td {
-    padding: 0;
-    margin: 0;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form,
+	fieldset, input, textarea, p, blockquote, th, td {
+	padding: 0;
+	margin: 0;
 }
-a{
-	text-decoration:none;
+
+a {
+	text-decoration: none;
 }
+
 table {
-    border-spacing: 0;
+	border-spacing: 0;
 }
-fieldset,img {
-    border: 0;
+
+fieldset, img {
+	border: 0;
 }
-address,caption,cite,code,dfn,em,strong,th,var {
-    font-weight: normal;
-    font-style: normal;
+
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-weight: normal;
+	font-style: normal;
 }
-strong{
+
+strong {
 	font-weight: bold;
 }
-ol,ul {
-    list-style: none;
-    margin:0;
-    padding:0;
-}
-caption,th {
-    text-align: left;
 
+ol, ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-q:before,q:after {
-    content:'';
+caption, th {
+	text-align: left;
 }
-abbr,acronym { border: 0;
+
+q:before, q:after {
+	content: '';
+}
+
+abbr, acronym {
+	border: 0;
+}
+
+header {
+	width: 100vw;
+	height: 60px;
+  background-color:#4e4e4e;
+	z-index: 100;
+}
+
+.header-con{
+	width:80vw;
+	margin:0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+header .logo {
+	width: 250px; height : 60px;
+	height: 60px;
+}
+
+header .login {
+	width: 60px;
+	height: 60px;
+	background-color: pink; 
+}
+
+i {
+	font-size: 30px;
+	color: black;
 }
 
 
+
+footer{
+  width: 100vw;
+  height: 250px;
+  background-color:#4e4e4e;
+	
+	
+}
