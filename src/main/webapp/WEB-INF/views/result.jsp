@@ -17,6 +17,7 @@
     <c:forEach var="music" items="${musicList}">
       <li>${music.title} - ${music.artist}</li>
       <li>${music.lyrics}</li>
+      <li>${music.lyrics.replaceAll("#", "<br>")}</li>
 <%--      <iframe width="560" height="315" src="${music.link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>--%>
     </c:forEach>
   </div>
