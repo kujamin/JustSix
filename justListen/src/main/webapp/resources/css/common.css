@@ -40,6 +40,7 @@ ol, ul {
 
 caption, th {
 	text-align: left;
+<<<<<<< HEAD
 }
 
 q:before, q:after {
@@ -78,9 +79,15 @@ header .login {
 i {
 	font-size: 30px;
 	color: black;
+=======
+>>>>>>> branch 'main' of https://github.com/hykim-king/JUSTSIX.git
 }
 
+q:before, q:after {
+	content: '';
+}
 
+<<<<<<< HEAD
 
 footer{
   width: 100vw;
@@ -89,3 +96,38 @@ footer{
 	
 	
 }
+=======
+abbr, acronym {
+	border: 0;
+}
+
+header {
+	width: 100vw;
+	height: 60px;
+	border: 1px solid magenta;
+	z-index: 100;
+}
+
+.header-con{
+	width:80vw;
+	margin:0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+header .logo {
+	width: 250px; height : 60px;
+	height: 60px;
+}
+
+header .login {
+	width: 60px;
+	height: 60px;
+	background-color: pink; 
+}
+
+header .login i {
+	font-size: 30px;
+	color: black;
+}
+>>>>>>> branch 'main' of https://github.com/hykim-king/JUSTSIX.git
