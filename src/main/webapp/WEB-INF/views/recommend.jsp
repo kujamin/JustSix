@@ -21,6 +21,7 @@
                 <input type="radio" name="genre" value="RB">알앤비
                 <input type="radio" name="genre" value="일렉">일렉
                 <input type="radio" name="genre" value="록메탈">록메탈
+                <input type="radio" name="genre" value="pop">pop
             </div>
 
 
