@@ -11,7 +11,7 @@
     <title>index</title>
 </head>
 <body>
-    <img src="/resources/img/calmdownman.jpg">
+    <img src="/resources/img/intro/ex01.jpg">
     <h1>1차 프로젝트 테스트</h1>
     <ul>
         <li><a href="/intro">인트로</a></li>
