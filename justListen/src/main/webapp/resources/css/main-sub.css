@@ -57,7 +57,7 @@
 	border: none;
 	border-radius: 30px;
 	
-	margin: 50px 50px 150px 0px;
+	margin: 50px 50px 50px 0px;
 	background-color: #9599af;
 	color: #fff;
 	font-size: 18px;
@@ -325,4 +325,13 @@
 
 p {
 	margin: 0;
+}
+
+.list-sum{
+	background-color: black;
+}
+
+caption, th {
+    text-align: left;
+    display: none;
 }

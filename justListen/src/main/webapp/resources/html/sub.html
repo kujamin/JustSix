@@ -7,6 +7,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../css/main-sub.css">
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
 <title>서브페이지 리스트</title>
 <style>
 </style>
@@ -28,9 +29,11 @@
 			</div>
 		</div>
 	</header>
+
 	<div class="container">
-		<h3 style="text-align: center; padding-top: 50px;">선택된 키워드를 포함한
-			음악 리스트</h3>
+		<h3
+			style="text-align: center; padding: 100px 0 30px; font-weight: bold;">선택된
+			키워드를 포함한 플레이 리스트</h3>
 
 		<br>
 		<table
@@ -38,8 +41,8 @@
 			<caption>FAQ List of Articles</caption>
 			<thead class="thead-light text-center">
 				<tr>
-					<th style="width: 10%;">No</th>
-					<th style="width: 90%;">FAQ Title</th>
+					<th style="width: 10%;"></th>
+					<th style="width: 90%;">recommended list</th>
 
 				</tr>
 			</thead>
@@ -677,14 +680,18 @@
 					</td>
 
 				</tr>
-				<tr class="bg-info">
-					<td colspan=4 class="text-left">자주 묻는 질문 총 합계</td>
+				<tr class="list-sum">
+					<td colspan=4 class="text-right">총 n곡</td>
 
 				</tr>
 			</tbody>
 		</table>
 
 	</div>
+
+	<footer class="footer">
+		<p>copyright</p>
+	</footer>
 	<script>
 window.onload = () => {
   // panel-faq-container

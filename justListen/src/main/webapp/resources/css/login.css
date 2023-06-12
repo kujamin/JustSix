@@ -202,6 +202,7 @@ label {
 	height: 35vh;
 	margin: 10px auto;
 	overflow: scroll;
+	background-color: #fff;
 }
 
 #agree-con .back-btn {
