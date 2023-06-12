@@ -10,10 +10,16 @@
     <!-- 데이터베이스 이름 및 계정 확인 -->
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!--  h2 DB
         <property name="driverClassName" value="org.h2.Driver"/>
         <property name="url" value="jdbc:h2:tcp://localhost/~/test" />
         <property name="username" value="sa"/>
-        <property name="password" value=""/>
+        <property name="password" value=""/> -->
+        
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:@192.168.0.123:1521:XE" />
+        <property name="username" value="justsix" />
+        <property name="password" value="6666" />
     </bean>
 
     <!-- 마이바티스 설정, 매퍼 정의 -->

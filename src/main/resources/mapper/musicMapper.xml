@@ -6,9 +6,12 @@
     <select id="findKeywordMusic" parameterType="music" resultType="music">
         SELECT * FROM music
         WHERE 1=1
-        <if test="genre != null">AND genre = #{genre}</if>
-        <if test="situation != null">AND situation = #{situation}</if>
+        
+        <if test="genre != null">AND genre LIKE '%'|| #{genre} || '%'</if>
+        <if test="situation != null">AND situation LIKE '%' #{situation} || '%'</if>
         <if test="feel != null">AND feel = #{feel}</if>
         <if test="weather != null">AND weather = #{weather}</if>
+        
+        ORDER BY id
     </select>
 </mapper>

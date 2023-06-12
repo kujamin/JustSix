@@ -17,8 +17,10 @@
             <div>
                 <label>장르 :</label>
                 <input type="radio" name="genre" value="발라드">발라드
-                <input type="radio" name="genre" value="Rock">락
-                <input type="radio" name="genre" value="R&B">알앤비
+                <input type="radio" name="genre" value="락">락
+                <input type="radio" name="genre" value="RB">알앤비
+                <input type="radio" name="genre" value="일렉">일렉
+                <input type="radio" name="genre" value="록메탈">록메탈
             </div>
 
 
