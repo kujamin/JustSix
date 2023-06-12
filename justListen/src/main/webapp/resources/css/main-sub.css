@@ -56,10 +56,13 @@
 	float: right;
 	border: none;
 	border-radius: 30px;
+	
 	margin: 50px 50px 150px 0px;
-	background-color: #4e4e4e;
+	background-color: #9599af;
 	color: #fff;
 	font-size: 18px;
+	font-weight:bold;
+	
 	-webkit-transition: transform 0.5s ease;
 	-o-transition: transform 0.5s ease;
 	transition: transform 0.5s ease;
@@ -68,6 +71,7 @@
 .submit:hover {
 	cursor: pointer;
 	transform: translateX(20px);
+	background-color: #948cb3;
 }
 
 .check_con {

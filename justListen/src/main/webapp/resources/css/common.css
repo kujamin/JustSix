@@ -48,7 +48,6 @@ ol, ul {
 
 caption, th {
 	text-align: left;
-<<<<<<< HEAD
 }
 
 q:before, q:after {
@@ -59,10 +58,20 @@ abbr, acronym {
 	border: 0;
 }
 
+
+/* Reset CSS
+ * --------------------------------------- */
+
+
+
+/* header footer start
+ * --------------------------------------- */
+
+
 header {
 	width: 100vw;
 	height: 60px;
-  background-color:#4e4e4e;
+  background-color: #eeeff5;
 	z-index: 100;
 }
 
@@ -81,61 +90,31 @@ header .logo {
 header .login {
 	width: 60px;
 	height: 60px;
-	background-color: pink; 
+	position: relative;
+
 }
 
-i {
-	font-size: 30px;
-	color: black;
-=======
->>>>>>> branch 'main' of https://github.com/hykim-king/JUSTSIX.git
+header .login img{
+width:40px;
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%, -50%);
+	
 }
 
-q:before, q:after {
-	content: '';
-}
 
-<<<<<<< HEAD
+
 
 footer{
   width: 100vw;
   height: 250px;
   background-color:#4e4e4e;
-	
-	
-}
-=======
-abbr, acronym {
-	border: 0;
+  color: #fff;
+  
 }
 
-header {
-	width: 100vw;
-	height: 60px;
-	border: 1px solid magenta;
-	z-index: 100;
-}
+/* header footer end
+ * --------------------------------------- */
 
-.header-con{
-	width:80vw;
-	margin:0 auto;
-	display: flex;
-	justify-content: space-between;
-}
 
-header .logo {
-	width: 250px; height : 60px;
-	height: 60px;
-}
-
-header .login {
-	width: 60px;
-	height: 60px;
-	background-color: pink; 
-}
-
-header .login i {
-	font-size: 30px;
-	color: black;
-}
->>>>>>> branch 'main' of https://github.com/hykim-king/JUSTSIX.git

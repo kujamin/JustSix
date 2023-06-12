@@ -137,9 +137,16 @@ label {
 	margin: 0;
 }
 
+
+/* -------회원가입-------- */
 .h-zero {
 	margin: 0;
 	padding-top: 20px;
+}
+
+.h-zero span{
+  font-weight: normal;
+	color: #808080;
 }
 
 /* -------비밀번호 찾기-------- */
@@ -175,13 +182,6 @@ label {
 	border-radius: 5px;
 }
 
-.size1 {
-	width: 200px;
-	height: 30px;
-	background-color: #f4f4f4;
-	border: none;
-	border-radius: 5px;
-}
 
 .find_pw .wide {
 	width: 100%;
