@@ -29,7 +29,9 @@ public class MusicController {
     @PostMapping("/recommend")
     public String recommend(@ModelAttribute MusicDTO musicDTO, Model model) {
         List<MusicDTO> musicList = musicService.findKeywordMusic(musicDTO);
+        int count = musicList.size();
         model.addAttribute("musicList", musicList);
+        model.addAttribute("count", count);
         return "result";
     }
 }

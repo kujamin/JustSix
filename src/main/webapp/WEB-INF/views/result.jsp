@@ -7,15 +7,7 @@
   <script src="/resources/js/music.js"></script>
 </head>
 <body>
-<h1>결과페이지 - 출력</h1>
-<div>
-<%--  <c:forEach var="music" items="${musicList}">--%>
-<%--    <img src="/resources/img/${music.albumpath}.jpg" alt="${music.title}">--%>
-<%--    <p>${music.artist} - ${music.title} - <script>convertAndDisplayPlaytime(${music.playtime});</script></p>--%>
-<%--    <iframe width="560" height="315" src="${music.link}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>--%>
-<%--    <p>${music.lyrics.replaceAll("#", "<br>")}</p>--%>
-<%--  </c:forEach>--%>
-</div>
+<h2>총 ${count}건의 데이터가 검색되었습니다.</h2>
 <div class="accordion accordion-flush" id="accordionFlushExample">
   <c:forEach var="music" items="${musicList}" varStatus="status">
     <div class="accordion-item">
