@@ -260,6 +260,13 @@
 }
 
 /* 서브(결과리스트) */
+
+.youtube{
+
+	text-align: center;
+}
+
+
 .panel-faq-title {
 	color: #ffffff;
 	cursor: pointer;
@@ -301,7 +308,7 @@
 .active {
 	display: block;
 	/* 높이를 정해줘야지만 transition이 적용됨 */
-	height: 400px;
+	height: 450px;
 }
 
 .album-img {
@@ -316,7 +323,7 @@
 }
 
 .lyric p {
-	width: 80%;
+	width: 50%;
 	height: 200px;
 	overflow-y: scroll;
 	margin: 50px auto;

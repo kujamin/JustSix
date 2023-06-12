@@ -61,11 +61,17 @@
 								<p class="m-time">03:53</p>
 							</div>
 							<div class="panel-faq-answer">
-								<iframe width="450px" height="250px"
-									src="https://www.youtube.com/embed/5sn4_6gFgMQ"
-									title="YouTube video player" frameborder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-									allowfullscreen></iframe>
+								<div class="youtube">
+
+
+									<iframe width="450px" height="250px"
+										src="https://www.youtube.com/embed/5sn4_6gFgMQ"
+										title="YouTube video player" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+										allowfullscreen></iframe>
+								</div>
+
+
 								<div class="lyric">
 
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -703,13 +709,19 @@ window.onload = () => {
   // btn-all-close
   const btnAllClose = document.querySelector("#btn-all-close");
   
-  // 반복문 순회하면서 해당 FAQ제목 클릭시 콜백 처리
-  for( let i=0; i < panelFaqContainer.length; i++ ) {
-    panelFaqContainer[i].addEventListener('click', function() { // 클릭시 처리할 일
-      // FAQ 제목 클릭시 -> 본문이 보이게끔 -> active 클래스 추가
-      panelFaqAnswer[i].classList.toggle('active');
+//반복문 순회하면서 해당 FAQ제목 클릭시 콜백 처리
+  for (let i = 0; i < panelFaqContainer.length; i++) {
+    panelFaqContainer[i].addEventListener('click', function () { // 클릭시 처리할 일
+      // 다른 FAQ 제목들의 active 클래스 제거
+      for (let j = 0; j < panelFaqContainer.length; j++) {
+        if (j !== i) {
+          panelFaqAnswer[j].classList.remove('active');
+        }
+      }
+      // 클릭한 FAQ 제목에 active 클래스 추가
+      panelFaqAnswer[i].classList.add('active');
     });
-  };
+  }
   
   btnAllClose.addEventListener('click', function() {
     // 버튼 클릭시 처리할 일  
