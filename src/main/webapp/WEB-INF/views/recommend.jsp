@@ -8,21 +8,71 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
+<link rel="stylesheet" type="text/css" href="/resources/css/main-sub.css" />
+<link rel="stylesheet" type="text/css" href="/resources/css/common.css"/>
     <title>음악 선택</title>
 </head>
 <body>
-    <h1>좋아하는 음악이 뭐니?</h1>
-    <div>
-        <form action="/music/recommend" method="post">
-            <div>
-                <label>장르 :</label>
-                <input type="radio" name="genre" value="발라드">발라드
-                <input type="radio" name="genre" value="락">락
-                <input type="radio" name="genre" value="RB">알앤비
-                <input type="radio" name="genre" value="일렉">일렉
-                <input type="radio" name="genre" value="록메탈">록메탈
-                <input type="radio" name="genre" value="pop">pop
-            </div>
+
+  <header class="header">
+    <div class="header-con">
+      <div class="logo">
+        <a href="index.html"> <img src="/resources/img/intro/LOGO-gray.png"
+          alt="logo">
+        </a>
+      </div>
+      <div class="login">
+        <a href="Login.html"> <img alt="login"
+          src="/resources/img/intro/icon-login.png">
+        </a>
+      </div>
+    </div>
+  </header>
+  
+  
+    <div class="container">
+    <h1>키워드를 선택해주세요</h1>
+        <form action="/music/recommend" method="post" class="form cf">
+       
+            <h2>장르</h2>       
+            <section class="plan cf genre check_con">
+
+                
+		            <input type="radio" name="genre" id="RB" value="RB" checked>
+		            <label class="free-label four col check_Box box01" for="RB">
+		              <p class="keyword">알앤비</p>
+		            </label>
+		            
+		            <input type="radio" name="genre" id="락" value="락">
+		            <label class="free-label four col check_Box box02" for="락">
+                  <p class="keyword">록/메탈</p>
+		            </label>
+                
+                <input type="radio" name="genre" id="랩힙합" value="랩힙합">
+                <label class="free-label four col check_Box box03" for="랩힙합">
+                  <p class="keyword">랩/힙합</p>
+                </label>
+                
+                
+                <input type="radio" name="genre" id="발라드" value="발라드">
+                <label class="free-label four col check_Box box04" for="발라드">
+                  <p class="keyword">발라드</p>
+                </label> 
+                
+                
+                <input type="radio" name="genre" id="인디" value="인디">
+                <label class="free-label four col check_Box box05" for="인디">
+                  <p class="keyword">인디음악</p>
+                </label>
+
+                <input type="radio" name="genre" id="팝" value="팝">
+                <label class="free-label four col check_Box box06" for="팝">
+                  <p class="keyword">팝</p>
+                </label>
+
+           
+            </section>
 
 
             <div>
@@ -49,7 +99,11 @@
             <input type="submit" value="전송">
         </form>
     </div>
-
+  <footer class="footer">
+    <p>Copyright ⓒ 2023 JustMusic. All rights reserved</p>
+    <p>JustListen 사이트 내의 모든 서비스는 영리를 목적으로 하지 아니합니다.</p> 
+  </footer>
+  
 
 
 </body>
