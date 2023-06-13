@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" type="text/css" href="/resources/css/main-sub.css" />
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css"/>
-    <title>음악 선택</title>
+    <title>키워드 선택</title>
 </head>
 <body>
 
@@ -32,7 +32,7 @@
   
   
     <div class="container">
-    <h1>키워드를 선택해주세요</h1>
+    <h1 style="text-align: center;">키워드를 선택해주세요</h1>
         <form action="/music/recommend" method="post" class="form cf">
        
             <h2>장르</h2>       
