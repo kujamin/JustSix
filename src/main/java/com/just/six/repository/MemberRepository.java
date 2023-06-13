@@ -24,6 +24,10 @@ public class MemberRepository {
     public MemberDTO login(MemberDTO memberDTO) {
         return sql.selectOne("Member.login", memberDTO);
     }
+    
+    public MemberDTO idChk(MemberDTO memberDTO) {
+    	return sql.selectOne("Member.idChk", memberDTO);
+    }
 
     public List<MemberDTO> findAll() {
         return sql.selectList("Member.findAll");

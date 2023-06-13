@@ -9,6 +9,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/resources/css/login.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <title>회원가입</title>
 </head>
 <body>
@@ -17,23 +18,27 @@
 			<div id="login_form">
 				<form action="/member/save" method="post">
 					<div class="logo">
-						<a href="index.html"> <img src="/resources/img/intro/LOGO-gray.png"
-							alt="logo">
+						<a href="index.html"> <img
+							src="/resources/img/intro/LOGO-gray.png" alt="logo">
 						</a>
 					</div>
 					<hr>
 					<!--이메일-->
 					<!--로그인 폼-->
 					<p class="input-title">E-mail</p>
-					<label> <input type="email" name="email"
-						placeholder="example@naver.com" class="size" required="required"> <input
-						type="button" value="중복확인 " class="btn">
+					<label> <input type="email" name="email" id="email"
+						placeholder="example@naver.com" class="size" required="required">
+						<input type="button" value="중복확인 " class="btn">
 					</label>
 					<!--이메일 인증번호 입력-->
 					<p class="input-title">E-mail 인증번호 입력</p>
-					<label> <input type="text" class="size" required="required"> <input
-						type="button" value="인증번호 전송 " class="btn">
+					<label> <input type="text" class="size" name="checkInput" id="checkInput"
+						placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
+						<input type="button" id="mail-Check-Btn" value="인증번호 전송 "
+						class="btn"> <span 
+						id="mail-check-warn"></span>
 					</label>
+
 
 
 					<!--비밀번호-->
@@ -80,7 +85,7 @@
 
 					<!-- 버튼 -->
 					<p>
-						<input type="submit" value="회원가입" class="btn w100">
+						<input id="register" type="submit" value="회원가입" class="btn w100" disabled="disabled">
 					</p>
 				</form>
 				<hr>
@@ -90,47 +95,6 @@
 			</div>
 		</div>
 	</div>
-
-	<script>
-		function validateForm() {
-			var password = document.getElementById("password").value;
-			var confirm_password = document.getElementById("confirm_password").value;
-			var password_error = document.getElementById("password_error");
-			var confirm_password_error = document
-					.getElementById("confirm_password_error");
-
-			     if (password.trim().length === 0) {
-			 password_error.innerHTML = "";
-			 } else if (password.length < 8 || password.length > 12) {
-			 password_error.innerHTML = "비밀번호는 8이상 12자 이하로 설정바랍니다.";
-			 } else {
-			 password_error.innerHTML = "";
-			 } 
-
-			if (confirm_password.trim().length === 0) {
-				confirm_password_error.innerHTML = "";
-			} else if (password !== confirm_password) {
-				confirm_password_error.innerHTML = "비밀번호가 일치하지 않습니다.";
-			} else {
-				confirm_password_error.innerHTML = "비밀번호가 일치합니다!";
-			}
-
-			if (password_error.innerHTML === ""
-					&& confirm_password_error.innerHTML === "") {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
-		function clearPasswordError() {
-			var password_error = document.getElementById("password_error");
-			var confirm_password_error = document
-					.getElementById("confirm_password_error");
-
-			password_error.innerHTML = "";
-			confirm_password_error.innerHTML = "";
-		}
-	</script>
+	<script src="/resources/js/mebership.js"></script>
 </body>
 </html>
