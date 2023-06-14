@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -47,7 +48,7 @@ public class MemberController {
     }
     
     //이메일 인증
-    @GetMapping("/**/mailCheck")
+    @PostMapping("/**/mailCheck")
     @ResponseBody
     public String mailCheck(String email) {
     	System.out.println("이메일 인증 요청이 들어옴!");
@@ -59,7 +60,8 @@ public class MemberController {
     public String loginForm() {
         return "login";
     }
-
+    
+    //로그인
     @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
         boolean loginResult = memberService.login(memberDTO);
@@ -76,5 +78,32 @@ public class MemberController {
         List<MemberDTO> memberDTOList = memberService.findAll();
         model.addAttribute("memberList", memberDTOList);
         return "list";
+    }
+    
+    //아이디 중복 체크
+    @GetMapping("/**/idChk")
+    @ResponseBody
+    public int idChk(MemberDTO memberDTO) throws Exception {
+    	String str = "";
+    	str = memberDTO.getEmail();
+    	System.out.println(str);
+    	int result = memberService.idChk(memberDTO);
+    	return result;
+    }
+    
+    //회원가입 post
+    @PostMapping("/**/register")
+    public String postRegister(MemberDTO memberDTO) throws Exception {
+    	int result = memberService.idChk(memberDTO);
+    	try {
+    		if(result == 1) {
+    			return "/register";
+    		}else if(result == 0) {
+    			memberService.save(memberDTO);
+    		}
+    	}catch (Exception e) {
+    		throw new RuntimeException();
+    	}
+		return "redirect:/";
     }
 }

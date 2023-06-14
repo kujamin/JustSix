@@ -25,7 +25,9 @@ public class MemberRepository {
         return sql.selectOne("Member.login", memberDTO);
     }
     
-    public MemberDTO idChk(MemberDTO memberDTO) {
+    public int idChk(MemberDTO memberDTO) {
+
+    	System.out.println("memberDTO = " + memberDTO);
     	return sql.selectOne("Member.idChk", memberDTO);
     }
 
