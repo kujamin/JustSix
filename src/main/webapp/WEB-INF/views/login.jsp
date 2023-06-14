@@ -35,7 +35,6 @@
 					<label> <input type="password" name="password"
 						placeholder="비밀번호" class="size">
 					</label>
-				</form>
 				<hr>
 				<p class="find">
 					<span><a href="Findpasswd.html">비밀번호 찾기</a></span> <span><a
@@ -45,7 +44,7 @@
 				<p>
 					<input type="submit" value="로그인">
 				</p>
-
+				</form>
 			</div>
 		</div>
 	</div>
