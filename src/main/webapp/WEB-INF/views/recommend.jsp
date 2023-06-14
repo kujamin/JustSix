@@ -22,11 +22,13 @@
           alt="logo">
         </a>
       </div>
+      <h2>${sessionScope.loginEmail} 님 환영합니다.</h2>
       <div class="login">
         <a href="/resources/html/Login.html"> <img alt="login"
           src="/resources/img/intro/icon-login.png">
         </a>
       </div>
+      
     </div>
   </header>
   

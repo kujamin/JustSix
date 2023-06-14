@@ -20,15 +20,15 @@ public class MemberRepository {
         return sql.insert("Member.save", memberDTO);
 //        **Mapper.xml 과 일치해야함 namespace.id
     }
-
-    public MemberDTO login(MemberDTO memberDTO) {
-        return sql.selectOne("Member.login", memberDTO);
-    }
     
     public int idChk(MemberDTO memberDTO) {
 
     	System.out.println("memberDTO = " + memberDTO);
     	return sql.selectOne("Member.idChk", memberDTO);
+    }
+    
+    public MemberDTO login(MemberDTO memberDTO) {
+    	return sql.selectOne("Member.login", memberDTO);
     }
 
     public List<MemberDTO> findAll() {

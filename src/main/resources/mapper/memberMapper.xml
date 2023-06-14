@@ -8,10 +8,7 @@
         INSERT INTO MEMBER (email, password, name)
         VALUES (#{email}, #{password}, #{name})
     </insert>
-    <!-- SELECT 구문을 사용할땐 resultType이 항상 따라옴-->
-    <select id="login" parameterType="member" resultType="member">
-        SELECT * FROM MEMBER WHERE email=#{email} and password=#{password}
-    </select>
+  
     <select id="findAll" resultType="member">
         SELECT * FROM MEMBER
     </select>
@@ -20,5 +17,10 @@
     <select id = "idChk" parameterType="String" resultType="int">
       SELECT COUNT(*) FROM member
       WHERE email = #{email}
+    </select>
+
+   <!-- 로그인시 DB조회 --> 
+    <select id = "login" parameterType="member" resultType="member">
+      select * from member where Email=#{email} and Password=#{password}
     </select>
 </mapper>

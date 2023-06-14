@@ -24,18 +24,18 @@ public class MemberService {
     	return memberRepository.idChk(memberDTO);
     }
 
-    public boolean login(MemberDTO memberDTO) {
-        MemberDTO loginMember = memberRepository.login(memberDTO);
-        if (loginMember != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public List<MemberDTO> findAll() {
         return memberRepository.findAll();
     }
+
+	public boolean login(MemberDTO memberDTO) {
+		MemberDTO loginMember = memberRepository.login(memberDTO);
+		if(loginMember != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	
 }
