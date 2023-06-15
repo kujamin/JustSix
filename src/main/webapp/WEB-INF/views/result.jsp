@@ -21,7 +21,7 @@
         </a>
       </div>
       <div class="login">
-        <a href="/resources/html/Login.html"> <img alt="login"
+        <a href="/member/login"> <img alt="login"
           src="/resources/img/intro/icon-login.png">
         </a>
       </div>

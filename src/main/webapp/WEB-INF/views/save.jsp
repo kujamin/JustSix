@@ -32,7 +32,7 @@
           <!--이메일 인증번호 입력-->
           <p class="input-title">E-mail 인증번호 입력</p>
           <label> <input type="text" class="size" name="checkInput" id="checkInput"
-            placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
+            placeholder="인증번호 6자리를 입력해주세요!" maxlength="6" required>
             <input type="button" id="mail-Check-Btn" value="인증번호 전송 "
             class="btn"> <span 
             id="mail-check-warn"></span>
@@ -80,7 +80,7 @@
 
           <!-- 버튼 -->
           <p>
-            <input id="register" type="submit" value="회원가입" class="btn w100" disabled="disabled">
+            <input id="register" type="submit" value="회원가입" class="btn w100">
           </p>
         </form>
         <hr>
