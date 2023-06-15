@@ -17,6 +17,7 @@
         <li><a href="/intro">인트로</a></li>
         <li><a href="/member/save">회원가입</a></li>
         <li><a href="/member/login">로그인</a></li>
+        <li><a href="/member/find">비밀번호찾기</a></li>
         <li><a href="/member/">회원목록 조회</a></li>
         <li><a href="/music/recommend">키워드 선택</a></li>
     </ul>
