@@ -10,6 +10,7 @@
 <head>
 <title>로그인</title>
 <link rel="stylesheet" type="text/css" href="/resources/css/login.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
 	<div id="con">
@@ -18,14 +19,14 @@
 				<!--로그인 폼-->
 				<form action="/member/login" method="post">
 					<div class="logo">
-						<a href="index.jsp"> <img src="/resources/img/intro/LOGO-gray.png"
+						<a href="/"> <img src="/resources/img/intro/LOGO-gray.png"
 							alt="logo">
 						</a>
 					</div>
 					<hr>
 					<!-- Email -->
 					<p class="input-title">Email</p>
-					<label> <input type="text" name="email" placeholder="이메일"
+					<label> <input type="text" id="email" name="email" placeholder="이메일"
 						class="size">
 
 					</label>
@@ -33,7 +34,7 @@
 					<!-- Password -->
 					<p class="input-title">Password</p>
 					<label> <input type="password" name="password"
-						placeholder="비밀번호" class="size">
+						placeholder="비밀번호" class="size" id="password">
 					</label>
 				<hr>
 				<p class="find">
@@ -42,11 +43,12 @@
 				</p>
 				<!-- <input type="submit" value="확인"> -->
 				<p>
-					<input type="submit" value="로그인">
+					<input type="submit" value="로그인" id ="fn_email" name="fn_email">
 				</p>
 				</form>
 			</div>
 		</div>
 	</div>
+	<script src="/resources/js/login.js"></script>
 </body>
 </html>
