@@ -18,12 +18,12 @@
       <div id="login_form">
         <form action="/member/save" method="post">
           <div class="logo">
-            <a href="index.html"> <img
+            <a href="/"> <img
               src="/resources/img/intro/LOGO-gray.png" alt="logo">
             </a>
           </div>
           <hr>
-          <!--이메일-->
+          <!--이메일-->ㄴ
           <!--로그인 폼-->
           <p class="input-title">E-mail</p>
           <label> <input type="email" name="email" id="email"

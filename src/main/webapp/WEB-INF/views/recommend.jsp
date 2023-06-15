@@ -18,7 +18,7 @@
   <header class="header">
     <div class="header-con">
       <div class="logo">
-        <a href="/resources/html/index.html"> <img src="/resources/img/intro/LOGO-gray.png"
+        <a href="/"> <img src="/resources/img/intro/LOGO-gray.png"
           alt="logo">
         </a>
       </div>
@@ -40,7 +40,7 @@
             <h2>장르</h2>       
             <section class="plan cf genre check_con">
          
-                <input type="radio" name="genre" id="RB" value="RB" checked>
+                <input type="radio" name="genre" id="RB" value="RB" >
                 <label class="free-label four col check_Box box01" for="RB">
                   <p class="keyword">알앤비</p>
                 </label>
@@ -78,7 +78,7 @@
       <section class="plan cf genre check_con">
 
         <input type="radio" name="situation" id="유산소" value="유산소"
-          checked><label class="free-label four col check_Box box07"
+          ><label class="free-label four col check_Box box07"
           for="유산소">
           <p class="keyword">유산소</p>
         </label> <input type="radio" name="situation" id="무산소" value="무산소"><label
@@ -88,7 +88,7 @@
           class="free-label four col check_Box box09" for="새벽두시">
           <p class="keyword">새벽두시</p>
         </label> <input type="radio" name="situation" id="노빠꾸낼없사불금" value="노빠꾸낼없사불금"
-          checked><label class="free-label four col check_Box box10"
+          ><label class="free-label four col check_Box box10"
           for="노빠꾸낼없사불금">
           <p class="keyword">불타는 금요일</p>
         </label> <input type="radio" name="situation" id="퇴근할때"
