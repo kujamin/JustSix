@@ -18,7 +18,7 @@
       <div id="login_form">
         <form action="/member/save" method="post">
           <div class="logo">
-            <a href="index.html"> <img
+            <a href="index.jsp"> <img
               src="/resources/img/intro/LOGO-gray.png" alt="logo">
             </a>
           </div>

@@ -16,12 +16,12 @@
   <header class="header">
     <div class="header-con">
       <div class="logo">
-        <a href="index.html"> <img src="/resources/img/intro/LOGO-gray.png"
+        <a href="index.jsp"> <img src="/resources/img/intro/LOGO-gray.png"
           alt="logo">
         </a>
       </div>
       <div class="login">
-        <a href="Login.html"> <img alt="login"
+        <a href="/resources/html/Login.html"> <img alt="login"
           src="/resources/img/intro/icon-login.png">
         </a>
       </div>

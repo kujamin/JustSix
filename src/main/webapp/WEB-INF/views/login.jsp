@@ -18,7 +18,7 @@
 				<!--로그인 폼-->
 				<form action="/member/login" method="post">
 					<div class="logo">
-						<a href="index"> <img src="/resources/img/intro/LOGO-gray.png"
+						<a href="index.jsp"> <img src="/resources/img/intro/LOGO-gray.png"
 							alt="logo">
 						</a>
 					</div>
