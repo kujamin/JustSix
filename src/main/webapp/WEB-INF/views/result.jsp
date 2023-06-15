@@ -16,7 +16,7 @@
   <header class="header">
     <div class="header-con">
       <div class="logo">
-        <a href="/"> <img src="/resources/img/intro/LOGO-gray.png"
+        <a href="index.jsp"> <img src="/resources/img/intro/LOGO-gray.png"
           alt="logo">
         </a>
       </div>
