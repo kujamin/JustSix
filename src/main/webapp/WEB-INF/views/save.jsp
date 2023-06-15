@@ -23,7 +23,7 @@
             </a>
           </div>
           <hr>
-          <!--이메일-->ㄴ
+          <!--이메일-->
           <!--로그인 폼-->
           <p class="input-title">E-mail</p>
           <label> <input type="email" name="email" id="email"
