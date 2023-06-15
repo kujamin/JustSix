@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/resources/css/login.css">
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <title>비밀번호 변경 또는 찾기</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
           <p class="input-title">E-mail</p>
           <label> <input type="email" name="email" id="email"
             placeholder="가입하신 이메일주소를 입력해주세요" class="size" required="required">
-            <input onclick = "fn_idChk();" type="button" value="이메일 확인 " class="btn">
+            <input onclick = "fn_idChk();" type="button" value="회원 인증 " class="btn">
           </label>
           <!--이메일 인증번호 입력-->
           <p class="input-title">E-mail 인증번호 입력</p>
@@ -60,5 +61,6 @@
       </div>
     </div>
   </div>
+<script src="/resources/js/find.js"></script>
 </body>
 </html>

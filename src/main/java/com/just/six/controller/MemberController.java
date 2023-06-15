@@ -32,13 +32,13 @@ public class MemberController {
 		this.memberService = memberService;
 	}
 	
-	// 비밀번호찾기 페이지 이동
+	// 비밀번호변경 페이지 이동
 	@GetMapping("/find")
 	public String findForm() {
 		return "find";
 	}
 	
-	// 비밀번호찾기 페이지 에서 로그인 페이지로 이동
+	// 비밀번호변경 페이지 에서 로그인 페이지로 이동
 	@PostMapping("/find")
 	public String find(@ModelAttribute MemberDTO memberDTO) {
 		int saveResult = memberService.save(memberDTO);
@@ -49,7 +49,7 @@ public class MemberController {
 		}
 	}
 
-	
+
 	
 	
 	// 회원 가입 페이지 이동
@@ -69,7 +69,7 @@ public class MemberController {
 		}
 	}
 
-	// 이메일 인증
+	// 회원가입 이메일 인증
 	@PostMapping("/**/mailCheck")
 	@ResponseBody
 	public String mailCheck(String email) {

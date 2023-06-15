@@ -1,4 +1,4 @@
-package com.just.six.service;
+ package com.just.six.service;
 
 import com.just.six.dto.MemberDTO;
 import com.just.six.repository.MemberRepository;
