@@ -57,7 +57,7 @@
             <div class="panel-faq-container">
               <div class="panel-faq-title">
                 <div class="m-title">${music.artist} - ${music.title} <script>convertAndDisplayPlaytime(${music.playtime});</script></div>
-                <div class="m-time"><script>convertAndDisplayPlaytime(${music.playtime});</script></div>
+                <div class="m-time"><script>convertAndDisplayPlaytime${music.playtime};</script></div>
               </div>
               <div class="panel-faq-answer">
                 <div class="youtube">

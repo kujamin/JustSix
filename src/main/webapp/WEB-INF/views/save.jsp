@@ -70,18 +70,14 @@
 
           <!-- 메일수신 -->
           <p class="input-chek">
-            <input checked="checked" type="radio" name="mail" value="Y"
-              id="m_y" required> <label for="m_y">약관내용을 확인하였으며
+            <input checked="checked" type="radio" name="agree" value="Y"
+              id="m_y" required> <label for="m_y">
+              동의합니다</label>
+              <input checked="checked" type="radio" name="agree" value="N"
+              id="m_y" required> <label for="m_y">동의하지 않음
               동의합니다</label>
           </p>
-          <p class="input-chek">
-            <input checked="checked" type="radio" name="mail" value="Y"
-              id="m_y" required> <label for="m_y">메일 수신</label>
-          </p>
-          <p class="input-chek">
-            <input type="radio" name="mail" value="N" id="m_n" required>
-            <label for="m_n">메일 수신 안 함</label>
-          </p>
+
 
           <!-- 버튼 -->
           <p>
