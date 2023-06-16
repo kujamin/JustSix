@@ -1,8 +1,8 @@
 package com.just.six.controller;
 
-import com.just.six.dto.MemberDTO;
-import com.just.six.service.MailSendService;
-import com.just.six.service.MemberService;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.List;
+import com.google.gson.Gson;
+import com.just.six.dto.MemberDTO;
+import com.just.six.dto.MessageDTO;
+import com.just.six.service.MailSendService;
+import com.just.six.service.MemberService;
 
 @Controller
 @RequestMapping("/member") // 공통 주소 처리
@@ -84,15 +85,21 @@ public class MemberController {
 	}
 
 	// 로그인
-	@PostMapping("/login")
+	@RequestMapping(value="/login", method = RequestMethod.POST
+			,produces = "application/json;charset=UTF-8")
+	@ResponseBody
 	public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+		String jsonString = "";
 		boolean loginResult = memberService.login(memberDTO);
+		MessageDTO message = new MessageDTO();
 		if (loginResult) {
 			session.setAttribute("loginEmail", memberDTO.getEmail());
-			return "redirect:/music/recommend";
-		} else {
-			return "login";
-		}
+			message.setMsgId("1");
+			message.setMsgContents(memberDTO.getEmail() + "님 환영합니다!");
+			jsonString = new Gson().toJson(message);
+			return jsonString;
+		} 
+		return "login";
 	}
 
 	@GetMapping("/")
