@@ -31,7 +31,7 @@
           </label>
           <!--이메일 인증번호 입력-->
           <p class="input-title">E-mail 인증번호 입력</p>
-          <label> <input type="text" class="size" name="checkInput" id="checkInput"
+          <label> <input type="text" class="size numberOnly" name="checkInput" id="checkInput"
             placeholder="인증번호 6자리를 입력해주세요!" maxlength="6" required>
             <input type="button" id="mail-Check-Btn" value="인증번호 전송 "
             class="btn"> <span 

@@ -70,7 +70,7 @@ public class MemberController {
 	}
 
 	// 회원가입 이메일 인증
-	@PostMapping("/**/mailCheck")
+	@GetMapping("/**/mailCheck")
 	@ResponseBody
 	public String mailCheck(String email) {
 		System.out.println("이메일 인증 요청이 들어옴!");

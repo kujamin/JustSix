@@ -1,45 +1,93 @@
-function register() {
-	
+//공백 문자 처리 함수
+let eUtil = {}
+var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 정규 표현식
+//숫자만 입력되도록 처리
+$(".numberOnly").on("keyup", function(e){
+	console.log('numberOnly keyup' + $(this).val());
+	//REG EXP
+	$(this).val( $(this).val().replace(/[^0-9]/g,"") );
+}); //numberOnly end------------------------
+// str이 비어있으면 true
+// 그렇지 않으면 false
+eUtil.ISEmpty = function(str) {
+	if (str != null && undefined != str) {
+		str = str.toString();
+
+		// 공백 제거: " james " -> "james"
+		if (str.replace(/ /gi, "").length == 0) {
+			return true;
+		}
+	}
+
+	return false;
+
 }
 
-//이메일 중복 확인 체크
+$('#register').on("click", function() {
+	console.log("register");
+});
+
+// 이메일 중복 확인 체크
 function fn_idChk() {
 	const email = $('#email').val();
-	$.ajax({
-		url : "/member/idChk",
-		type : "get",
-		dataType : "json",
-		data : 'email=' + email,
+	if (exptext.test(email) == false) {
+		// 이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우
+		alert("이메일 형식이 올바르지 않습니다.");
+		$("#email").focus();
+	} else {
 
-		success : function(data) {
-			if (data == 1) {
-				console.log("data : " + data);
-				alert("중복된 아이디입니다.");
-			} else if (data == 0) {
-				$('#mail-Check-Btn').attr('disabled', false);
-				console.log("data : " + data);
-				alert("사용가능한 아이디입니다.")
+		$.ajax({
+			url : "/member/idChk",
+			type : "get",
+			dataType : "json",
+			data : 'email=' + email,
+
+			success : function(data) {
+				if (data == 1) {
+					console.log("data : " + data);
+					alert("중복된 아이디입니다.");
+				} else if (data == 0) {
+					if (eUtil.ISEmpty($('#email').val()) == true) {
+						alert('아이디를 입력 하세요.');
+						$("#email").focus();
+						return;
+					} else {
+						// $('#mail-Check-Btn').attr('disabled', false);
+						console.log("data : " + data);
+						alert("사용가능한 아이디입니다.")
+					}
+				}
 			}
-		}
-	})
+		})
+	}
 }
 
 // 이메일 인증 버튼
 $('#mail-Check-Btn').click(function() {
 	const email = $('#email').val(); // 이메일 주소값 얻어오기!
-	console.log('완성된 이메일 : ' + email); // 이메일 오는지 확인
 	const checkInput = $('#checkInput'); // 인증번호 입력하는곳
+	if (eUtil.ISEmpty($('#email').val()) == true) {
+		alert('이메일 입력 후 중복확인을 진행해주세요.');
+		$("#email").focus();
 
-	$.ajax({
-		type : 'post',
-		url : "mailCheck?email=" + email, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
-		success : function(data) {
-			console.log("data : " + data);
-			$('#checkInput').attr('disabled', false);
-			code = data;
-			alert('인증번호가 전송되었습니다.')
-		}
-	}); // end ajax
+	} else if (exptext.test(email) == false) {
+		// 이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우
+		alert("이메일 형식이 올바르지 않습니다.");
+		$("#email").focus();
+	} else {
+		$.ajax({
+			type : 'get',
+			url : "mailCheck?email=" + email, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
+			success : function(data) {
+
+				console.log("data : " + data);
+				$('#checkInput').attr('disabled', false);
+				code = data;
+				alert('인증번호가 전송되었습니다.')
+			}
+		}); // end ajax
+	}
+
 }); // end send eamil
 
 // 인증번호 비교
