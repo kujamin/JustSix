@@ -1,6 +1,30 @@
-function register() {
-	
+//공백 문자 처리 함수
+let eUtil = {}
+var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 정규 표현식
+var email_Check = false;
+var certified_Email = false;
+//숫자만 입력되도록 처리
+$(".numberOnly").on("keyup", function(e){
+	console.log('numberOnly keyup' + $(this).val());
+	//REG EXP
+	$(this).val( $(this).val().replace(/[^0-9]/g,"") );
+}); //numberOnly end------------------------
+// str이 비어있으면 true
+// 그렇지 않으면 false
+eUtil.ISEmpty = function(str) {
+	if (str != null && undefined != str) {
+		str = str.toString();
+
+		// 공백 제거: " james " -> "james"
+		if (str.replace(/ /gi, "").length == 0) {
+			return true;
+		}
+	}
+
+	return false;
+
 }
+
 
 //회원여부 확인 체크
 function fn_idChk() {
@@ -18,7 +42,7 @@ function fn_idChk() {
 			} else if (data == 0) {
 				$('#mail-Check-Btn').attr('disabled', false);
 				console.log("data : " + data);
-				alert("가입된 이메일이 아닙니다")
+				alert("가입된 이메일이 아닙니다. 회원가입을 진행해주세요.")
 			}
 		}
 	})
@@ -31,8 +55,8 @@ $('#mail-Check-Btn').click(function() {
 	const checkInput = $('#checkInput'); // 인증번호 입력하는곳
 
 	$.ajax({
-		type : 'post',
-		url : "mailCheck?email=" + email, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
+		type : 'get',
+		url : "findCheck?email=" + email, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
 		success : function(data) {
 			console.log("data : " + data);
 			$('#checkInput').attr('disabled', false);
@@ -57,6 +81,17 @@ $('#checkInput').blur(function() {
 	} else {
 		$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
 		$resultMsg.css('color', 'red');
+	}
+});
+
+$('#register').on("click", function() {
+	console.log(email_Check);
+	console.log(certified_Email);
+	if((email_Check == false) && (certified_Email == false)) {
+		alert("이메일 회원인증 및 인증번호를 입력해주세요");
+	} else {
+		alert("회원가입을 축하합니다. 로그인창으로 넘어가지 않으면, 나머지 항목들의 값이 올바른지 재확인 해주십시오.");
+		
 	}
 });
 

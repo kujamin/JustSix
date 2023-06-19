@@ -32,13 +32,13 @@ public class MemberController {
 	public MemberController(MemberService memberService) {
 		this.memberService = memberService;
 	}
-	
+
 	// 비밀번호변경 페이지 이동
 	@GetMapping("/find")
 	public String findForm() {
 		return "find";
 	}
-	
+
 	// 비밀번호변경 페이지 에서 로그인 페이지로 이동
 	@PostMapping("/find")
 	public String find(@ModelAttribute MemberDTO memberDTO) {
@@ -50,14 +50,12 @@ public class MemberController {
 		}
 	}
 
-	//이용약관 동의 페이지
+	// 이용약관 동의 페이지
 	@GetMapping("/agree")
 	public String agreeForm() {
 		return "agree";
 	}
 
-	
-	
 	// 회원 가입 페이지 이동
 	@GetMapping("/save")
 	public String saveForm() {
@@ -84,14 +82,22 @@ public class MemberController {
 		return mailService.joinEmail(email);
 	}
 
+	// 비밀번호찾기 이메일 인증
+	@GetMapping("/**/findCheck")
+	@ResponseBody
+	public String findCheck(String email) {
+		System.out.println("이메일 인증 요청이 들어옴!");
+		System.out.println("이메일 인증 이메일 : " + email);
+		return mailService.findEmail(email);
+	}
+
 	@GetMapping("/login")
 	public String loginForm() {
 		return "login";
 	}
 
 	// 로그인
-	@RequestMapping(value="/login", method = RequestMethod.POST
-			,produces = "application/json;charset=UTF-8")
+	@RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
 	public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
 		String jsonString = "";
@@ -109,7 +115,7 @@ public class MemberController {
 			jsonString = new Gson().toJson(message);
 			return jsonString;
 		}
-		
+
 	}
 
 	@GetMapping("/")

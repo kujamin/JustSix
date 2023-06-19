@@ -45,19 +45,18 @@ function fn_idChk() {
 			success : function(data) {
 				if (data == 1) {
 					console.log("data : " + data);
-					email_Check == false;
+					email_Check = false;
 					alert("중복된 아이디입니다.");
 				} else if (data == 0) {
 					if (eUtil.ISEmpty($('#email').val()) == true) {
 						alert('아이디를 입력 하세요.');
 						$("#email").focus();
-						email_Check == false;
+						email_Check = false;
 						return;
 					} else {
 						console.log("data : " + data);
-						email_Check == true;
+						email_Check = true;
 						alert("사용가능한 아이디입니다.")
-						return email_Check;
 					}
 				}
 			}
@@ -104,14 +103,18 @@ $('#checkInput').blur(function() {
 	if (inputCode == code) {
 		$resultMsg.html('인증번호가 일치합니다.');
 		$resultMsg.css('color', 'green');
+		$resultMsg.css('display', 'block');
+		$resultMsg.css('font-size', '13px');
 		$('#mail-Check-Btn').attr('disabled', true);
 		$('#email').attr('readonly', true);
 		$('#register').attr('disabled', false);
-		certified_Email == true;
+		certified_Email = true;
 	} else {
-		certified_Email == false;
-		$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
+		certified_Email = false;
+		$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!');
 		$resultMsg.css('color', 'red');
+		$resultMsg.css('display', 'block');
+		$resultMsg.css('font-size', '13px');
 	}
 });
 
@@ -121,7 +124,7 @@ $('#register').on("click", function() {
 	if((email_Check == false) && (certified_Email == false)) {
 		alert("이메일 중복확인 및 인증번호를 입력해주세요");
 	} else {
-		alert("회원가입이 가능합니다.");
+		alert("회원가입을 축하합니다. 로그인창으로 넘어가지 않으면, 나머지 항목들의 값이 올바른지 재확인 해주십시오.");
 		
 	}
 });
@@ -139,6 +142,7 @@ function validateForm() {
 	} else if (password.length < 8 || password.length > 12) {
 		password_error.innerHTML = "비밀번호는 8이상 12자 이하로 설정바랍니다.";
 		$('#register').attr('disabled', true);
+		
 	} else {
 		password_error.innerHTML = "";
 		$('#register').attr('disabled', false);
@@ -152,6 +156,7 @@ function validateForm() {
 	} else {
 		confirm_password_error.innerHTML = "비밀번호가 일치합니다!";
 		$('#register').attr('disabled', false);
+		$('.error-message').css('color', 'green');
 	}
 
 	if (password_error.innerHTML === ""

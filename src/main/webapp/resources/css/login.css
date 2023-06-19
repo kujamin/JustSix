@@ -151,6 +151,8 @@ label {
 /* -------비밀번호 찾기-------- */
 .error-message {
 	display: block;
+	  color: red;
+  font-size: 13px;
 }
 
 .find_pw #login_form {

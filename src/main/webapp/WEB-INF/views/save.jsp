@@ -79,7 +79,7 @@
 
           <!-- 버튼 -->
           <p>
-            <input id="register" type="button" value="회원가입" class="btn w100">
+            <input id="register" type="submit" value="회원가입" class="btn w100">
           </p>
         </form>
         <hr>

@@ -39,7 +39,7 @@
 					</label>
 				<hr>
 				<p class="find">
-					<span><a href="Findpasswd.html">비밀번호 찾기</a></span> <span><a
+					<span><a href="find">비밀번호 찾기</a></span> <span><a
 						href="save">회원가입</a></span>
 				</p>
 				<!-- <input type="submit" value="확인"> -->
