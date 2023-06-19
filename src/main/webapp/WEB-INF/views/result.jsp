@@ -61,7 +61,7 @@
                 
               
                 
-                <div><script>convertAndDisplayPlaytime(${music.playtime});</script></div>
+                <div><script>convertAndDisplayPlaytime(${music.playtime})</script></div>
                  
               </div>
               <div class="panel-faq-answer">
