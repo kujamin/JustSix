@@ -1,6 +1,8 @@
 //공백 문자 처리 함수
 let eUtil = {}
 var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 정규 표현식
+var email_Check = false;
+var certified_Email = false;
 //숫자만 입력되도록 처리
 $(".numberOnly").on("keyup", function(e){
 	console.log('numberOnly keyup' + $(this).val());
@@ -23,9 +25,7 @@ eUtil.ISEmpty = function(str) {
 
 }
 
-$('#register').on("click", function() {
-	console.log("register");
-});
+
 
 // 이메일 중복 확인 체크
 function fn_idChk() {
@@ -45,16 +45,19 @@ function fn_idChk() {
 			success : function(data) {
 				if (data == 1) {
 					console.log("data : " + data);
+					email_Check == false;
 					alert("중복된 아이디입니다.");
 				} else if (data == 0) {
 					if (eUtil.ISEmpty($('#email').val()) == true) {
 						alert('아이디를 입력 하세요.');
 						$("#email").focus();
+						email_Check == false;
 						return;
 					} else {
-						// $('#mail-Check-Btn').attr('disabled', false);
 						console.log("data : " + data);
+						email_Check == true;
 						alert("사용가능한 아이디입니다.")
+						return email_Check;
 					}
 				}
 			}
@@ -68,11 +71,13 @@ $('#mail-Check-Btn').click(function() {
 	const checkInput = $('#checkInput'); // 인증번호 입력하는곳
 	if (eUtil.ISEmpty($('#email').val()) == true) {
 		alert('이메일 입력 후 중복확인을 진행해주세요.');
+		email_Check = false;
 		$("#email").focus();
 
 	} else if (exptext.test(email) == false) {
 		// 이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우
 		alert("이메일 형식이 올바르지 않습니다.");
+		email_Check = false;
 		$("#email").focus();
 	} else {
 		$.ajax({
@@ -96,15 +101,28 @@ $('#checkInput').blur(function() {
 	const inputCode = $(this).val();
 	const $resultMsg = $('#mail-check-warn');
 
-	if (inputCode === code) {
+	if (inputCode == code) {
 		$resultMsg.html('인증번호가 일치합니다.');
 		$resultMsg.css('color', 'green');
 		$('#mail-Check-Btn').attr('disabled', true);
 		$('#email').attr('readonly', true);
 		$('#register').attr('disabled', false);
+		certified_Email == true;
 	} else {
+		certified_Email == false;
 		$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
 		$resultMsg.css('color', 'red');
+	}
+});
+
+$('#register').on("click", function() {
+	console.log(email_Check);
+	console.log(certified_Email);
+	if((email_Check == false) && (certified_Email == false)) {
+		alert("이메일 중복확인 및 인증번호를 입력해주세요");
+	} else {
+		alert("회원가입이 가능합니다.");
+		
 	}
 });
 

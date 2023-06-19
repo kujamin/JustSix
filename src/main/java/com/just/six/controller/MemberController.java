@@ -50,6 +50,11 @@ public class MemberController {
 		}
 	}
 
+	//이용약관 동의 페이지
+	@GetMapping("/agree")
+	public String agreeForm() {
+		return "agree";
+	}
 
 	
 	
@@ -98,8 +103,13 @@ public class MemberController {
 			message.setMsgContents(memberDTO.getEmail() + "님 환영합니다!");
 			jsonString = new Gson().toJson(message);
 			return jsonString;
-		} 
-		return "login";
+		} else {
+			message.setMsgId("2");
+			message.setMsgContents("아이디 또는 비밀번호를 확인해주세요.");
+			jsonString = new Gson().toJson(message);
+			return jsonString;
+		}
+		
 	}
 
 	@GetMapping("/")

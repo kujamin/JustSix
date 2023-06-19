@@ -63,7 +63,7 @@
 
           <!--이용약관동의-->
           <p class="h-zero input-title">
-            이용약관동의 <span><a href="agree.html">[이용약관 자세히 읽기]</a></span>
+            이용약관동의 <span><a href="agree">[이용약관 자세히 읽기]</a></span>
           </p>
 
 
@@ -72,15 +72,14 @@
             <input checked="checked" type="radio" name="agree" value="Y"
               id="m_y" required> <label for="m_y">
               동의합니다</label>
-              <input checked="checked" type="radio" name="agree" value="N"
-              id="m_y" required> <label for="m_y">동의하지 않음
-              동의합니다</label>
+              <input type="radio" name="agree" value="N"
+              id="m_y" required> <label for="m_y">동의하지 않음</label>
           </p>
 
 
           <!-- 버튼 -->
           <p>
-            <input id="register" type="submit" value="회원가입" class="btn w100">
+            <input id="register" type="button" value="회원가입" class="btn w100">
           </p>
         </form>
         <hr>
