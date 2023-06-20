@@ -61,7 +61,7 @@
                 
               
                 
-                <div><script>convertAndDisplayPlaytime(${music.playtime})</script></div>
+                <div><script>convertAndDisplayPlaytime(${music.playtime});</script></div>
                  
               </div>
               <div class="panel-faq-answer">
@@ -88,7 +88,10 @@
 
         </tr>
     </table>
-  </div>
+    
+    
+    
+  </div><!-- container end -->
 
   <footer class="footer">
     <p>Copyright ⓒ 2023 JustMusic. All rights reserved</p>

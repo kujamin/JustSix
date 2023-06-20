@@ -27,6 +27,10 @@ public class MemberService {
     public int find(MemberDTO memberDTO) {
     	return memberRepository.find(memberDTO);
     }
+    
+    public int delete(MemberDTO memberDTO) {
+    	return memberRepository.delete(memberDTO);
+    }
 
     public List<MemberDTO> findAll() {
         return memberRepository.findAll();

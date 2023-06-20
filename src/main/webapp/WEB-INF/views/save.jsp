@@ -73,7 +73,7 @@
               id="m_y" required> <label for="m_y">
               동의합니다</label>
               <input type="radio" name="agree" value="N"
-              id="m_y" required> <label for="m_y">동의하지 않음</label>
+              id="m_y" > <label for="m_y">동의하지 않음</label>
           </p>
 
 

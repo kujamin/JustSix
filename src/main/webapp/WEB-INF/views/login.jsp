@@ -44,7 +44,7 @@
 				</p>
 				<!-- <input type="submit" value="확인"> -->
 				<p>
-					<input type="submit" value="로그인" id ="fn_email" name="fn_email">
+					<input type="submit" value="로그인" id ="fn_email" name="fn_email" class="btn w100">
 				</p>
 				</form>
 			</div>

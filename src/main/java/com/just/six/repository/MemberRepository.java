@@ -1,6 +1,7 @@
 package com.just.six.repository;
 
 import com.just.six.dto.MemberDTO;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -32,6 +33,11 @@ public class MemberRepository {
     public int find(MemberDTO memberDTO) {
     	return sql.update("Member.find", memberDTO);
     }
+    
+
+	public int delete(MemberDTO memberDTO) {
+		return sql.delete("Member.delete",memberDTO);
+	}
 
     public List<MemberDTO> findAll() {
         return sql.selectList("Member.findAll");
