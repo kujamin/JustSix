@@ -142,9 +142,11 @@ function validateForm() {
 	} else if (password.length < 8 || password.length > 12) {
 		password_error.innerHTML = "비밀번호는 8이상 12자 이하로 설정바랍니다.";
 		$('#register').attr('disabled', true);
+		$('.error-message').css('color', 'red');
 		
 	} else {
-		password_error.innerHTML = "";
+		password_error.innerHTML = "사용가능한 비밀번호 입니다!";
+		$('.error-message').css('color', 'green');
 		$('#register').attr('disabled', false);
 	}
 
@@ -153,6 +155,7 @@ function validateForm() {
 	} else if (password !== confirm_password) {
 		confirm_password_error.innerHTML = "비밀번호가 일치하지 않습니다.";
 		$('#register').attr('disabled', true);
+		$('.error-message').css('color', 'red');
 	} else {
 		confirm_password_error.innerHTML = "비밀번호가 일치합니다!";
 		$('#register').attr('disabled', false);

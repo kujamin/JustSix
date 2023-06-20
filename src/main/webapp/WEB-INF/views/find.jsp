@@ -13,7 +13,7 @@
 		<div id="login">
 			<div id="login_form">
 				<!--로그인 폼-->
-				<form>
+				<form action="/member/find" method="post">
 					<div class="logo">
 						<a href="/"> <img src="/resources/img/intro/LOGO-gray.png"
 							alt="logo">
@@ -23,7 +23,6 @@
 
 
 					<!--이메일-->
-					<!--로그인 폼-->
 					<p class="input-title">E-mail</p>
 					<label> <input type="email" name="email" id="email"
 						placeholder="가입하신 이메일주소를 입력해주세요" class="size" required="required">
@@ -50,10 +49,11 @@
 					<!--비밀번호 확인-->
 					<p class="input-title">새로운 Password 확인</p>
 					<label for="confirm_password"> <input id="confirm_password" name="confirm_password" type="password"
-						class="size wide" required> <span class="error-message"
+						class="size wide" required oninput="validateForm()"> <span class="error-message"
 						id="confirm_password_error"></span>
 					</label>
 
+          <!-- 버튼 -->
 					<p>
 						<input id="register" type="submit" value="비밀번호 변경"
 							class="btn w100">
@@ -62,7 +62,7 @@
 
 				<hr>
 				<p class="find">
-					<span><a href="Login.jsp">로그인 페이지로 이동</a></span>
+					<span><a href="login">로그인 페이지로 이동</a></span>
 				</p>
 			</div>
 		</div>

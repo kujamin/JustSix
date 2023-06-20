@@ -8,6 +8,11 @@
         INSERT INTO MEMBER (email, password, name)
         VALUES (#{email}, #{password}, #{name})
     </insert>
+    
+    <!-- 비밀번호 변경 --> 
+    <update id="find" parameterType="member">
+      UPDATE MEMBER SET PASSWORD = #{password} WHERE EMAIL = #{email} 
+    </update>
   
     <select id="findAll" resultType="member">
         SELECT * FROM MEMBER
@@ -23,4 +28,6 @@
     <select id = "login" parameterType="member" resultType="member">
       select * from member where Email=#{email} and Password=#{password}
     </select>
+    
+    
 </mapper>

@@ -22,13 +22,15 @@ public class MemberRepository {
     }
     
     public int idChk(MemberDTO memberDTO) {
-
-    	System.out.println("memberDTO = " + memberDTO);
     	return sql.selectOne("Member.idChk", memberDTO);
     }
     
     public MemberDTO login(MemberDTO memberDTO) {
     	return sql.selectOne("Member.login", memberDTO);
+    }
+    
+    public int find(MemberDTO memberDTO) {
+    	return sql.update("Member.find", memberDTO);
     }
 
     public List<MemberDTO> findAll() {

@@ -67,8 +67,8 @@
                   <p class="keyword">인디음악</p>
                 </label>
 
-                <input type="radio" name="genre" id="팝" value="팝">
-                <label class="free-label four col check_Box box06" for="팝">
+                <input type="radio" name="genre" id="POP" value="POP">
+                <label class="free-label four col check_Box box06" for="POP">
                   <p class="keyword">팝</p>
                 </label>
           
@@ -116,21 +116,28 @@
       <h2>기분</h2>
       <section class="plan cf genre check_con">
 
-        <input type="radio" name="feel" id="고독" value="고독"><label
-          class="free-label four col check_Box box15" for="고독">
+        <input type="radio" name="feel" id="고독" value="고독">
+        <label class="free-label four col check_Box box15" for="고독">
           <p class="keyword">고독</p>
-        </label> <input type="radio" name="feel" id="슬픔" value="슬픔"><label
-          class="free-label four col check_Box box16" for="슬픔">
-          <p class="keyword">슬픔</p> <input type="radio" name="feel"
-          id="설렘" value="설렘"><label
-          class="free-label four col check_Box box17" for="설렘">
+        </label> 
+   
+        <input type="radio" name="feel" id="슬픔" value="슬픔">
+        <label class="free-label four col check_Box box16" for="슬픔">
+          <p class="keyword">슬픔</p> 
+        </label>
+        
+        <input type="radio" name="feel" id="설렘" value="설렘">
+        <label class="free-label four col check_Box box17" for="설렘">
             <p class="keyword">설렘</p>
-        </label> <input type="radio" name="feel" id="분노" value="분노"><label
-          class="free-label four col check_Box box18" for="분노">
+        </label> 
+        
+        <input type="radio" name="feel" id="분노" value="분노">
+        <label class="free-label four col check_Box box18" for="분노">
             <p class="keyword">분노</p>
         </label>
-        </label> <input type="radio" name="feel" id="행복" value="행복"><label
-          class="free-label four col check_Box box19" for="행복">
+
+        <input type="radio" name="feel" id="신남" value="신남">
+        <label class="free-label four col check_Box box19" for="신남">
           <p class="keyword">행복</p>
         </label>
 
@@ -165,8 +172,8 @@
         </label> <input type="radio" name="popular" id="대중적인" value="대중적인"><label
           class="free-label four col check_Box box25" for="대중적인">
           <p class="keyword">대중적인</p>
-        </label> <input type="radio" name="popular" id="컬르적" value="컬르적"><label
-          class="free-label four col check_Box box26" for="컬르적">
+        </label> <input type="radio" name="popular" id="컬트적" value="컬트적"><label
+          class="free-label four col check_Box box26" for="컬트적">
           <p class="keyword">컬르적인</p>
         </label>
 
@@ -175,18 +182,18 @@
       
       <h2>노래가사</h2>
       <section class="plan cf genre check_con">
-        <input type="radio" name="liricstype" id="사랑 노래" value="사랑 노래"><label
-          class="free-label four col check_Box box27" for="사랑 노래">
+        <input type="radio" name="liricstype" id="사랑" value="사랑"><label
+          class="free-label four col check_Box box27" for="사랑">
           <p class="keyword">사랑 노래</p>
-        </label> <input type="radio" name="liricstype" id="이별 노래" value="이별 노래"><label
-          class="free-label four col check_Box box28" for="이별 노래">
+        </label> <input type="radio" name="liricstype" id="이별" value="이별"><label
+          class="free-label four col check_Box box28" for="이별">
           <p class="keyword">이별 노래</p>
-        </label> <input type="radio" name="liricstype" id="자신감 노래"
-          value="자신감 노래"><label
-          class="free-label four col check_Box box29" for="자신감 노래">
+        </label> <input type="radio" name="liricstype" id="자신감"
+          value="자신감"><label
+          class="free-label four col check_Box box29" for="자신감">
           <p class="keyword">자신감 노래</p>
-        </label> <input type="radio" name="liricstype" id="사회 비판 노래" value="사회 비판 노래"><label
-          class="free-label four col check_Box box30" for="사회 비판 노래">
+        </label> <input type="radio" name="liricstype" id="사회" value="사회"><label
+          class="free-label four col check_Box box30" for="사회">
           <p class="keyword">사회 비판 노래</p>
         </label>
 

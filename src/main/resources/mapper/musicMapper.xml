@@ -9,8 +9,10 @@
         
         <if test="genre != null">AND genre LIKE '%'|| #{genre} || '%'</if>
         <if test="situation != null">AND situation LIKE '%'|| #{situation} || '%'</if>
-        <if test="feel != null">AND feel = #{feel}</if>
-        <if test="weather != null">AND weather = #{weather}</if>
+        <if test="feel != null">AND feel LIKE '%'|| #{feel} || '%'</if>
+        <if test="weather != null">AND weather LIKE '%'|| #{weather} || '%'</if>
+        <if test="popular != null">AND popular LIKE '%'|| #{popular} || '%'</if>
+        <if test="lyricstype != null">AND lyricstype LIKE '%'|| #{lyricstype} || '%'</if>
        
     </select>
 </mapper>

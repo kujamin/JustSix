@@ -33,23 +33,6 @@ public class MemberController {
 		this.memberService = memberService;
 	}
 
-	// 비밀번호변경 페이지 이동
-	@GetMapping("/find")
-	public String findForm() {
-		return "find";
-	}
-
-	// 비밀번호변경 페이지 에서 로그인 페이지로 이동
-	@PostMapping("/find")
-	public String find(@ModelAttribute MemberDTO memberDTO) {
-		int saveResult = memberService.save(memberDTO);
-		if (saveResult > 0) {
-			return "login";
-		} else {
-			return "find";
-		}
-	}
-
 	// 이용약관 동의 페이지
 	@GetMapping("/agree")
 	public String agreeForm() {
@@ -60,6 +43,24 @@ public class MemberController {
 	@GetMapping("/save")
 	public String saveForm() {
 		return "save";
+	}
+
+	// 비밀번호변경 페이지 이동
+	@GetMapping("/find")
+	public String findForm() {
+		return "find";
+	}
+
+	// 비밀번호변경 페이지 에서 로그인 페이지로 이동
+	@PostMapping("/find")
+	public String find(@ModelAttribute MemberDTO memberDTO) {
+		int saveResult = memberService.find(memberDTO);
+		System.out.println("saveResult" + saveResult);
+		if (saveResult > 0) {
+			return "login";
+		} else {
+			return "save";
+		}
 	}
 
 	// 회원 가입 페이지 에서 로그인 페이지로 이동
