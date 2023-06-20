@@ -46,10 +46,9 @@
       <div class="mypage_btn">
           <div class="tag_button">
               <p>비밀번호변경</p>
-          </div>
+          </div>         
           <div class="tag_button">
-              <p>회원탈퇴</p>
-              <input type="button" value="회원탈퇴" id="delete">
+              <p id="delete">회원탈퇴</p>
           </div>
           <div class="tag_button">
               <p>로그아웃</p>
@@ -239,6 +238,7 @@
   
   
 <script src="/resources/js/jquery-3.7.0.js"></script>  
+
 <script >
 // 헤더 / 서치팝업
 $(".header .icon-login").click(function() {
@@ -247,11 +247,7 @@ $(".header .icon-login").click(function() {
 $(".mypage_pop .fa-times-circle").click(function() {
     $(".mypage_pop").fadeOut();
 });
-$(".menu_icon .align_justify").click(function() {
-    $(".header, header .global_nav_bar li a, .align_justify").toggleClass(
-        "active"
-    );
-});
+
 </script>
 
 </body>
