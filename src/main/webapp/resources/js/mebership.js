@@ -178,3 +178,5 @@ function clearPasswordError() {
 	password_error.innerHTML = "";
 	confirm_password_error.innerHTML = "";
 }
+
+
