@@ -227,8 +227,16 @@
     
           <input type="submit" value="전송">
       </form>
+      <button onclick="clearAllRadioButtons()">체크박스 초기화</button>
   </div>
-   
+   <script>
+		function clearAllRadioButtons() {
+			var radioButtons = document.querySelectorAll('input[type="radio"]');
+			for (var i = 0; i < radioButtons.length; i++) {
+				radioButtons[i].checked = false;
+			}
+		}
+	</script>
    
    <div id="container">
     <p>Select your favorite programming language:</p>
