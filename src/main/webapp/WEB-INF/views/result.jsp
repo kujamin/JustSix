@@ -6,6 +6,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
   rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
   <link rel="stylesheet" type="text/css" href="/resources/css/main-sub.css" />
   <link rel="stylesheet" type="text/css" href="/resources/css/common.css"/>
   <script src="/resources/js/result.js"></script>
@@ -13,6 +14,7 @@
   
 </head>
 <body>
+
 
   <header class="header">
     <div class="header-con">
@@ -22,12 +24,36 @@
         </a>
       </div>
       <div class="login">
-        <a href="/member/login"> <img alt="login"
+        <img class="icon-login" alt="login"
           src="/resources/img/intro/icon-login.png">
-        </a>
+        
       </div>
+      
     </div>
   </header>
+
+      
+  <!-- 팝업 -->
+  <div class="mypage_pop">
+      <div class="close">
+          <i class="fa fa-times-circle"></i>
+      </div>
+      <div class="mypage_name">
+          <p class="my-email">${sessionScope.loginEmail}</p>
+      </div>
+      <div class="underline"></div>
+      <div class="mypage_btn">
+          <div class="tag_button">
+              <p><a href="/member/find">비밀번호변경</a></p>
+          </div>         
+          <div class="tag_button">
+              <p><a href="/member/delete">회원탈퇴</a></p>
+          </div>
+          <div class="tag_button">
+              <p><a href="#">로그아웃</a></p>
+          </div>
+      </div>
+  </div>
 
   <div class="container">
     <h3
@@ -100,5 +126,16 @@
   
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/resources/js/jquery-3.7.0.js"></script>  
+<script >
+// 헤더 / 서치팝업
+$(".header .icon-login").click(function() {
+    $(".mypage_pop").fadeToggle();
+});
+$(".mypage_pop .fa-times-circle").click(function() {
+    $(".mypage_pop").fadeOut();
+});
+</script>
+
 </body>
 </html>

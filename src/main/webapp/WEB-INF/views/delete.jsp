@@ -9,8 +9,8 @@
 <title>회원탈퇴</title>
 </head>
 <body>
-	<div id="con" class="delete">
-		<div id="login">
+	<div id="con" class="delete find_pw">
+		<div id="login">          
 			<div id="delete_form">
 				<!--로그인 폼-->
 				<form action="/member/delete" method="post">

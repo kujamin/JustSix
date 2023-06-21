@@ -23,7 +23,6 @@
           alt="logo">
         </a>
       </div>
-      <div class="welcome"><p>${sessionScope.loginEmail} 님 환영합니다.</p></div>
       <div class="login">
         <img class="icon-login" alt="login"
           src="/resources/img/intro/icon-login.png">
@@ -45,13 +44,13 @@
       <div class="underline"></div>
       <div class="mypage_btn">
           <div class="tag_button">
-              <p>비밀번호변경</p>
+              <p><a href="/member/find">비밀번호변경</a></p>
           </div>         
           <div class="tag_button">
-              <p id="delete">회원탈퇴</p>
+              <p><a href="/member/delete">회원탈퇴</a></p>
           </div>
           <div class="tag_button">
-              <p>로그아웃</p>
+              <p><a href="#">로그아웃</a></p>
           </div>
       </div>
   </div>
@@ -74,7 +73,7 @@
                 <p class="keyword">록/메탈</p>
               </label>
               
-              <input type="radio" name="genre" id="랩힙합" value="랩힙합">
+              <input type="radio" name="genre" id="랩힙합" value="랩힙합" checked="checked">
               <label class="free-label four col check_Box box03" for="랩힙합">
                 <p class="keyword">랩/힙합</p>
               </label>
@@ -229,7 +228,24 @@
           <input type="submit" value="전송">
       </form>
   </div>
-    
+   
+   
+   <div id="container">
+    <p>Select your favorite programming language:</p>
+    <div>
+    <input type="radio" id="java" name="language" value="java" 체크>
+    <label for="java">Java</label>
+ 
+    <input type="radio" id="cpp" name="language" value="cpp">
+    <label for="cpp">C++</label>
+ 
+    <input type="radio" name="language" value="python">
+    <label for="python">Python</label>
+    </div>
+    <button id="submit">Submit</button>
+</div>
+
+ 
     
   <footer class="footer">
     <p>Copyright ⓒ 2023 JustMusic. All rights reserved</p>
@@ -238,7 +254,6 @@
   
   
 <script src="/resources/js/jquery-3.7.0.js"></script>  
-
 <script >
 // 헤더 / 서치팝업
 $(".header .icon-login").click(function() {
@@ -247,7 +262,6 @@ $(".header .icon-login").click(function() {
 $(".mypage_pop .fa-times-circle").click(function() {
     $(".mypage_pop").fadeOut();
 });
-
 </script>
 
 </body>
