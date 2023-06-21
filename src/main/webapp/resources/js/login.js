@@ -1,7 +1,4 @@
-$('#fn_email').on(
-		"click",
-		function() {
-
+$('#fn_email').on("click",function() {
 			$.ajax({
 				type : "POST",
 				url : "/member/login",

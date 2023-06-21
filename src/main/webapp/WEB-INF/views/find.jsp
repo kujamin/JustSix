@@ -13,7 +13,7 @@
 		<div id="login">
 			<div id="login_form">
 				<!--로그인 폼-->
-				<form action="/member/find" method="post">
+				<form action="/member/find" method="post" id="find-form">
 					<div class="logo">
 						<a href="/"> <img src="/resources/img/intro/LOGO-gray.png"
 							alt="logo">

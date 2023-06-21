@@ -90,11 +90,33 @@ $('#checkInput').blur(function() {
 		$('#register').attr('disabled', false);
 		certified_Email = true;
 	} else {
+		certified_Email = false;
 		$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
 		$resultMsg.css('color', 'red');
 	}
 });
 
+// 비밀번호 변경 폼 유효성 검사
+const form = document.getElementById('find-form');
+
+form.addEventListener('submit', function(event) {
+	event.preventDefault(); // 전송 안되게 처리
+	$('#register').on("click", function() {
+		console.log(email_Check);
+		console.log(certified_Email);
+
+		if ((email_Check == true) && (certified_Email == true)) {
+			form.submit();
+			alert("비밀번호 변경에 성공하였습니다. 변경하신 비밀번호로 재 로그인 해주세요.");
+			$("#register").off("click");
+		} else {
+			alert("인증번호를 재확인 해주십시오.");
+			$("#register").off("click");
+
+		}
+
+	});
+});
 
 // 비밀번호 관련 로직 처리
 function validateForm() {
@@ -113,21 +135,19 @@ function validateForm() {
 	} else {
 		password_error.innerHTML = "사용가능한 비밀번호 입니다!";
 		$('.error-message').css('color', 'green');
-		 password_Check = true;
-		$('#register').attr('disabled', false);
-	}
-
-	if (confirm_password.trim().length === 0) {
-		confirm_password_error.innerHTML = "";
-	} else if (password !== confirm_password) {
-		confirm_password_error.innerHTML = "비밀번호가 일치하지 않습니다.";
 		$('#register').attr('disabled', true);
-		$('.error-message').css('color', 'red');
-	} else {
-		confirm_password_error.innerHTML = "비밀번호가 일치합니다!";
-		$('#register').attr('disabled', false);
-		password_Confirm_Check = true;
-		$('.error-message').css('color', 'green');
+
+		if (confirm_password.trim().length === 0) {
+			confirm_password_error.innerHTML = "";
+		} else if (password !== confirm_password) {
+			confirm_password_error.innerHTML = "비밀번호가 일치하지 않습니다.";
+			$('#register').attr('disabled', true);
+			$('.error-message').css('color', 'red');
+		} else {
+			confirm_password_error.innerHTML = "비밀번호가 일치합니다!";
+			$('#register').attr('disabled', false);
+			$('.error-message').css('color', 'green');
+		}
 	}
 
 	if (password_error.innerHTML === ""
@@ -143,13 +163,12 @@ $('#register').on("click", function() {
 	console.log(certified_Email);
 	if ((email_Check == false) || (certified_Email == false)) {
 		alert("이메일 회원인증 및 인증번호를 입력해주세요");
-	} else if ((email_Check == true) && (certified_Email == true))  {
-		if((password_Check == true) && (password_Confirm_Check == true)) {
+	} else if ((email_Check == true) && (certified_Email == true)) {
+		if ((password_Check == true) && (password_Confirm_Check == true)) {
 			alert("비밀번호 변경이 완료되었습니다.");
 		} else {
 			alert("아래 조건에 맞는 비밀번호를 재설정 해주십시오.")
 		}
-		
 
 	}
 });

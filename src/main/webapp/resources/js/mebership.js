@@ -1,9 +1,14 @@
 //공백 문자 처리 함수
 let eUtil = {}
 var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 정규
-																	// 표현식
+// 표현식
 var email_Check = false;
 var certified_Email = false;
+
+// 회원가입 동의 여부 버튼
+const agreeRadio = document.getElementById('m_y');
+const disagreeRadio = document.getElementById('m_n');
+
 // 숫자만 입력되도록 처리
 $(".numberOnly").on("keyup", function(e) {
 	console.log('numberOnly keyup' + $(this).val());
@@ -124,17 +129,27 @@ form.addEventListener('submit', function(event) {
 	$('#register').on("click", function() {
 		console.log(email_Check);
 		console.log(certified_Email);
-		if ((email_Check == true) && (certified_Email == true)) {
-			form.submit();
-			alert("회원가입을 축하합니다.");
-			$("#register").off("click");
-		} else {
-			alert("나머지 항목들의 값이 올바른지 재확인 해주십시오.");
-			$("#register").off("click");
 
+		if ($('input:radio[name="agree"]:checked').is(':checked')) {
+			if ((email_Check == true) && (certified_Email == true)) {
+				form.submit();
+				alert("회원가입을 축하합니다.");
+				$("#register").off("click");
+			} else {
+				alert("나머지 항목들의 값이 올바른지 재확인 해주십시오.");
+				$("#register").off("click");
+
+			}
+		} else {
+			alert('이용약관 동의를 체크해주세요.');
 		}
 	});
 });
+
+disagreeRadio.addEventListener('click', function() {
+    alert('회원가입에 동의해주셔야 합니다.');
+    agreeRadio.checked = true; // 비동의 버튼 클릭 시 자동으로 동의 버튼 선택 처리
+  });
 
 // 비밀번호 관련 로직 처리
 function validateForm() {
@@ -155,7 +170,7 @@ function validateForm() {
 		password_error.innerHTML = "사용가능한 비밀번호 입니다!";
 		$('.error-message').css('color', 'green');
 		$('#register').attr('disabled', true);
-		
+
 		if (confirm_password.trim().length === 0) {
 			confirm_password_error.innerHTML = "";
 		} else if (password !== confirm_password) {
@@ -168,8 +183,6 @@ function validateForm() {
 			$('.error-message').css('color', 'green');
 		}
 	}
-
-	
 
 	if (password_error.innerHTML === ""
 			&& confirm_password_error.innerHTML === "") {

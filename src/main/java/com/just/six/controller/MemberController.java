@@ -60,16 +60,9 @@ public class MemberController {
 	// 회원탈퇴 페이지 이동
 	@RequestMapping(value = "/delete", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
 	@ResponseBody
-	public String delete(MemberDTO memberDTO, HttpSession session)throws SQLException{
+	public String delete(@ModelAttribute MemberDTO memberDTO, HttpSession session)throws SQLException{
 		String jsonString = "";
-
-//		// 세션에 있는
-//		MemberDTO member = (MemberDTO) session.getAttribute("member");
-//		//세션이메일 가져오기
-//		String sessionEmail = member.getEmail();
-//		// 비밀번호
-//		String DTOEmail = memberDTO.getEmail();
-		int flag = this.memberService.delete(memberDTO);
+		int flag = memberService.delete(memberDTO);
 
 		MessageDTO message = new MessageDTO();
 		if (flag == 1) {
@@ -79,7 +72,7 @@ public class MemberController {
 			return jsonString;
 		} else {
 			message.setMsgId("4");
-			message.setMsgContents("계정 탈퇴에 실패하였습니다.");
+			message.setMsgContents("아이디 또는 비밀번호를 다시 확인해주세요.");
 			jsonString = new Gson().toJson(message);
 			return jsonString;
 		}
