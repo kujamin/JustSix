@@ -1,14 +1,15 @@
 //공백 문자 처리 함수
 let eUtil = {}
-var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 정규 표현식
+var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 정규
+																	// 표현식
 var email_Check = false;
 var certified_Email = false;
-//숫자만 입력되도록 처리
-$(".numberOnly").on("keyup", function(e){
+// 숫자만 입력되도록 처리
+$(".numberOnly").on("keyup", function(e) {
 	console.log('numberOnly keyup' + $(this).val());
-	//REG EXP
-	$(this).val( $(this).val().replace(/[^0-9]/g,"") );
-}); //numberOnly end------------------------
+	// REG EXP
+	$(this).val($(this).val().replace(/[^0-9]/g, ""));
+}); // numberOnly end------------------------
 // str이 비어있으면 true
 // 그렇지 않으면 false
 eUtil.ISEmpty = function(str) {
@@ -24,8 +25,6 @@ eUtil.ISEmpty = function(str) {
 	return false;
 
 }
-
-
 
 // 이메일 중복 확인 체크
 function fn_idChk() {
@@ -117,16 +116,24 @@ $('#checkInput').blur(function() {
 		$resultMsg.css('font-size', '13px');
 	}
 });
+// 회원 가입 폼 유효성 검사
+const form = document.getElementById('register-form');
 
-$('#register').on("click", function() {
-	console.log(email_Check);
-	console.log(certified_Email);
-	if((email_Check == false) && (certified_Email == false)) {
-		alert("이메일 중복확인 및 인증번호를 입력해주세요");
-	} else {
-		alert("회원가입을 축하합니다. 로그인창으로 넘어가지 않으면, 나머지 항목들의 값이 올바른지 재확인 해주십시오.");
-		
-	}
+form.addEventListener('submit', function(event) {
+	event.preventDefault(); // 전송 안되게 처리
+	$('#register').on("click", function() {
+		console.log(email_Check);
+		console.log(certified_Email);
+		if ((email_Check == true) && (certified_Email == true)) {
+			form.submit();
+			alert("회원가입을 축하합니다.");
+			$("#register").off("click");
+		} else {
+			alert("나머지 항목들의 값이 올바른지 재확인 해주십시오.");
+			$("#register").off("click");
+
+		}
+	});
 });
 
 // 비밀번호 관련 로직 처리
@@ -143,24 +150,26 @@ function validateForm() {
 		password_error.innerHTML = "비밀번호는 8이상 12자 이하로 설정바랍니다.";
 		$('#register').attr('disabled', true);
 		$('.error-message').css('color', 'red');
-		
+
 	} else {
 		password_error.innerHTML = "사용가능한 비밀번호 입니다!";
 		$('.error-message').css('color', 'green');
-		$('#register').attr('disabled', false);
+		$('#register').attr('disabled', true);
+		
+		if (confirm_password.trim().length === 0) {
+			confirm_password_error.innerHTML = "";
+		} else if (password !== confirm_password) {
+			confirm_password_error.innerHTML = "비밀번호가 일치하지 않습니다.";
+			$('#register').attr('disabled', true);
+			$('.error-message').css('color', 'red');
+		} else {
+			confirm_password_error.innerHTML = "비밀번호가 일치합니다!";
+			$('#register').attr('disabled', false);
+			$('.error-message').css('color', 'green');
+		}
 	}
 
-	if (confirm_password.trim().length === 0) {
-		confirm_password_error.innerHTML = "";
-	} else if (password !== confirm_password) {
-		confirm_password_error.innerHTML = "비밀번호가 일치하지 않습니다.";
-		$('#register').attr('disabled', true);
-		$('.error-message').css('color', 'red');
-	} else {
-		confirm_password_error.innerHTML = "비밀번호가 일치합니다!";
-		$('#register').attr('disabled', false);
-		$('.error-message').css('color', 'green');
-	}
+	
 
 	if (password_error.innerHTML === ""
 			&& confirm_password_error.innerHTML === "") {

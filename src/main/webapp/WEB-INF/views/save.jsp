@@ -16,7 +16,7 @@
   <div id="con">
     <div id="login">
       <div id="login_form">
-        <form action="/member/save" method="post">
+        <form action="/member/save" method="post" id="register-form">
           <div class="logo">
             <a href="/"> <img src="/resources/img/intro/LOGO-gray.png" alt="logo">
             </a>
