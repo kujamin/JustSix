@@ -25,7 +25,7 @@
 					<!--이메일-->
 					<p class="input-title">E-mail</p>
 					<label> <input type="email" name="email" id="email"
-						placeholder="가입하신 이메일주소를 입력해주세요" class="size" required="required">
+						placeholder="가입하신 이메일주소를 입력해주세요" class="size wide" required="required">
 				
 					</label>
 

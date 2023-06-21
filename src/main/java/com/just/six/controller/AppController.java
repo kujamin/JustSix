@@ -9,4 +9,8 @@ public class AppController {
     public String index() {
         return "index";
     }
+    @GetMapping("/intro")
+    public String intro() {
+    	return "intro";
+    }
 }
