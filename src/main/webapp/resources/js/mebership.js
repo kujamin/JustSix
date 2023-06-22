@@ -9,6 +9,8 @@ var certified_Email = false;
 const agreeRadio = document.getElementById('m_y');
 const disagreeRadio = document.getElementById('m_n');
 
+
+
 // 숫자만 입력되도록 처리
 $(".numberOnly").on("keyup", function(e) {
 	console.log('numberOnly keyup' + $(this).val());

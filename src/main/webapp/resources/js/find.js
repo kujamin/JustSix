@@ -6,6 +6,8 @@ var email_Check = false;
 var certified_Email = false;
 var password_Check = false;
 var password_Confirm_Check = false;
+
+
 // 숫자만 입력되도록 처리
 $(".numberOnly").on("keyup", function(e) {
 	console.log('numberOnly keyup' + $(this).val());
