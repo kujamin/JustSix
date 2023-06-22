@@ -76,7 +76,7 @@
                 <p class="keyword">록/메탈</p>
               </label>
               
-              <input type="radio" name="genre" id="랩힙합" value="랩힙합" checked="checked">
+              <input type="radio" name="genre" id="랩힙합" value="랩힙합">
               <label class="free-label four col check_Box box03" for="랩힙합">
                 <p class="keyword">랩/힙합</p>
               </label>
