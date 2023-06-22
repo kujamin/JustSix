@@ -1,4 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: hbi
+  Date: 2023-06-09
+  Time: 오전 10:16
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -33,37 +39,29 @@
           <i class="fa fa-times-circle"></i>
       </div>
       <div class="mypage_name">
-          <c:if test="${sessionScope.loginEmail != null}">
-              <p class="my-email">${sessionScope.loginEmail}</p>
-          </c:if>
+          <p class="my-email">${sessionScope.loginEmail}</p>
       </div>
       <div class="underline"></div>
       <div class="mypage_btn">
-          <c:if test="${sessionScope.loginEmail == null}">
-              <div class="tag_button">
-                  <p><a href="/member/login">로그인</a></p>
-              </div>
-          </c:if>
-          <c:if test="${sessionScope.loginEmail != null}">
-              <div class="tag_button">
-                  <p><a href="/member/find">비밀번호변경</a></p>
-              </div>
-              <div class="tag_button">
-                  <p><a href="/member/delete">회원탈퇴</a></p>
-              </div>
-              <div class="tag_button">
-                  <p><a href="/member/logout">로그아웃</a></p>
-              </div>
-          </c:if>
+          <div class="tag_button">
+              <p><a href="/member/find">비밀번호변경</a></p>
+          </div>         
+          <div class="tag_button">
+              <p><a href="/member/delete">회원탈퇴</a></p>
+          </div>
+          <div class="tag_button">
+              <p><a href="#">로그아웃</a></p>
+          </div>
       </div>
   </div>
       
   
   <div class="container">
-  <h1 style="text-align: center; margin:150px 0 50px 0;">키워드를 선택해주세요</h1>
+  <div class="wrap">
+  <h1 style="text-align: center; margin:50px 0 0 0;  ">키워드를 선택해주세요</h1>
       <form action="/music/recommend" method="post" class="form cf">
      
-          <h2>장르</h2>       
+          <h2>장르  <div class="underline"></div></h2>       
           <section class="plan cf genre check_con">
        
               <input type="radio" name="genre" id="RB" value="RB" >
@@ -76,7 +74,7 @@
                 <p class="keyword">록/메탈</p>
               </label>
               
-              <input type="radio" name="genre" id="랩힙합" value="랩힙합">
+              <input type="radio" name="genre" id="랩힙합" value="랩힙합" >
               <label class="free-label four col check_Box box03" for="랩힙합">
                 <p class="keyword">랩/힙합</p>
               </label>
@@ -100,7 +98,7 @@
         
           </section>
 
-              <h2>상황</h2>
+              <h2>상황<div class="underline"></div></h2>
     <section class="plan cf genre check_con">
 
       <input type="radio" name="situation" id="유산소" value="유산소"
@@ -139,7 +137,7 @@
     </section>
 
 
-    <h2>기분</h2>
+    <h2>기분<div class="underline"></div></h2>
     <section class="plan cf genre check_con">
 
       <input type="radio" name="feel" id="고독" value="고독">
@@ -171,7 +169,7 @@
     
     
     
-    <h2>날씨</h2>
+    <h2>날씨<div class="underline"></div></h2>
     <section class="plan cf genre check_con">
 
       <input type="radio" name="weather" id="비올때" value="비올때"><label
@@ -190,7 +188,7 @@
 
     </section>
     
-    <h2>대중성</h2>
+    <h2>대중성<div class="underline"></div></h2>
     <section class="plan cf genre check_con">
       <input type="radio" name="popular" id="히트곡" value="히트곡"><label
         class="free-label four col check_Box box24" for="히트곡">
@@ -206,7 +204,7 @@
 
     </section>
     
-    <h2>노래가사</h2>
+    <h2>노래가사<div class="underline"></div></h2>
     <section class="plan cf genre check_con">
       <input type="radio" name="lyricstype" id="사랑" value="사랑"><label
         class="free-label four col check_Box box27" for="사랑">
@@ -225,23 +223,38 @@
 
 
     </section>
-    
-    
-    
-          <input type="submit" value="전송">
-      </form>
-      <button onclick="clearAllRadioButtons()">체크박스 초기화</button>
+    <input type="submit" value="결과보기" class="go-result">
+   </form>
+    <button onclick="clearAllRadioButtons()" class="clear">선택 초기화</button>
+    </div>
   </div>
-</div>
-
+  <script>
+  function clearAllRadioButtons() {
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+    for (var i = 0; i < radioButtons.length; i++) {
+      radioButtons[i].checked = false;
+    }
+  }
+</script>
+   
  
     
   <footer class="footer">
     <p>Copyright ⓒ 2023 JustMusic. All rights reserved</p>
     <p>JustListen 사이트 내의 모든 서비스는 영리를 목적으로 하지 아니합니다.</p> 
   </footer>
+  
+  
+<script src="/resources/js/jquery-3.7.0.js"></script>  
+<script >
+// 마이페이지 팝업
+$(".header .icon-login").click(function() {
+    $(".mypage_pop").fadeToggle();
+});
+$(".mypage_pop .fa-times-circle").click(function() {
+    $(".mypage_pop").fadeOut();
+});
+</script>
 
-  <script src="/resources/js/jquery-3.7.0.js"></script>
-  <script src="/resources/js/recommend.js"></script>
 </body>
 </html>

@@ -1,55 +1,55 @@
 @import
-	url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap')
-	;
+  url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap')
+  ;
 
 body {
-	font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 /* Reset CSS
  * --------------------------------------- */
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 table {
-	border-spacing: 0;
+  border-spacing: 0;
 }
 
 fieldset, img {
-	border: 0;
+  border: 0;
 }
 
 address, caption, cite, code, dfn, em, strong, th, var {
-	font-weight: normal;
-	font-style: normal;
+  font-weight: normal;
+  font-style: normal;
 }
 
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 ol, ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 caption, th {
-	text-align: left;
+  text-align: left;
 }
 
 q:before, q:after {
-	content: '';
+  content: '';
 }
 
 abbr, acronym {
-	border: 0;
+  border: 0;
 }
 
 /* Reset CSS
@@ -58,47 +58,47 @@ abbr, acronym {
 /* header footer start
  * --------------------------------------- */
 header {
-	width: 100vw;
-	height: 60px;
-	background-color: #eeeff5;
-	z-index: 100;
+  width: 100vw;
+  height: 60px;
+  background-color: #eeeff5;
+  z-index: 100;
 }
 
 .header-con {
-	width: 80vw;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 header .logo {
-	width: 250px;
-	height: 60px;
-	height: 60px;
+  width: 250px;
+  height: 60px;
+  height: 60px;
 }
 
 header .login {
-	width: 60px;
-	height: 60px;
-	position: relative;
+  width: 60px;
+  height: 60px;
+  position: relative;
 }
 
 header .login img {
-	width: 40px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 header .welcome {
-	height: 60px;
+  height: 60px;
 }
 
 header .welcome p {
-	font-size: 12px;
-	line-height: 60px;
-	color: #454d55;
+  font-size: 12px;
+  line-height: 60px;
+  color: #454d55;
 }
 
 
@@ -108,7 +108,7 @@ header .welcome p {
 /* 마이페이지 팝업 시작
  * --------------------------------------- */
 .mypage_pop p{
-	text-align: center;
+  text-align: center;
 }
 
 .mypage_pop {
@@ -194,14 +194,14 @@ header .welcome p {
  * --------------------------------------- */
 
 footer {
-	background-color: #454d55;
-	margin-top: 100px;
-	width: 100vw;
-	padding: 50px 0;
-	color: #fff;
-	text-align: center;
-	font-size: 12px;
-	line-height: 30px;
+  background-color: #454d55;
+  margin-top: 100px;
+  width: 100vw;
+  padding: 50px 0;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  line-height: 30px;
 }
 
 /* header footer end
