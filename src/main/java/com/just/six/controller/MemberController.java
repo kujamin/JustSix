@@ -181,33 +181,4 @@ public class MemberController {
 		return "redirect:/";
 	}
 
-//	// 회원탈퇴
-//	@RequestMapping(value = "/delete", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-//	@ResponseBody //
-//	public String delete(MemberDTO memberDTO, HttpSession session) throws SQLException {
-//		String jsonString = "";
-//
-//		// 세션에 있는
-//		MemberDTO member = (MemberDTO) session.getAttribute("member");
-//		//세션이메일 가져오기
-//		String sessionEmail = member.getEmail();
-//		// 비밀번호
-//		String DTOEmail = memberDTO.getEmail();
-//		int flag = this.memberService.delete(memberDTO);
-//
-//		MessageDTO message = new MessageDTO();
-//		if (flag == 1 && (sessionEmail == DTOEmail)) {
-//			message.setMsgId("3");
-//			message.setMsgContents(memberDTO.getEmail() + "님의 계정이 탈퇴되었습니다.");
-//			jsonString = new Gson().toJson(message);
-//			return jsonString;
-//		} else {
-//			message.setMsgId("4");
-//			message.setMsgContents("계정 탈퇴에 실패하였습니다.");
-//			jsonString = new Gson().toJson(message);
-//			return jsonString;
-//		}
-//
-//	}
-
 }
