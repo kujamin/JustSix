@@ -3,6 +3,7 @@ package com.just.six.controller;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -144,7 +145,6 @@ public class MemberController {
 			jsonString = new Gson().toJson(message);
 			return jsonString;
 		}
-
 	}
 
 	@GetMapping("/")
@@ -181,4 +181,10 @@ public class MemberController {
 		return "redirect:/";
 	}
 
+	@GetMapping("/logout")
+	public String logout(HttpServletRequest request, HttpSession session) throws Exception {
+		String referer = request.getHeader("Referer");
+		session.invalidate();
+		return "redirect:" + referer;
+	}
 }
