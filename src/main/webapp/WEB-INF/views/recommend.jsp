@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hbi
-  Date: 2023-06-09
-  Time: 오전 10:16
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -39,19 +33,28 @@
           <i class="fa fa-times-circle"></i>
       </div>
       <div class="mypage_name">
-          <p class="my-email">${sessionScope.loginEmail}</p>
+          <c:if test="${sessionScope.loginEmail != null}">
+              <p class="my-email">${sessionScope.loginEmail}</p>
+          </c:if>
       </div>
       <div class="underline"></div>
       <div class="mypage_btn">
-          <div class="tag_button">
-              <p><a href="/member/find">비밀번호변경</a></p>
-          </div>         
-          <div class="tag_button">
-              <p><a href="/member/delete">회원탈퇴</a></p>
-          </div>
-          <div class="tag_button">
-              <p><a href="#">로그아웃</a></p>
-          </div>
+          <c:if test="${sessionScope.loginEmail == null}">
+              <div class="tag_button">
+                  <p><a href="/member/login">로그인</a></p>
+              </div>
+          </c:if>
+          <c:if test="${sessionScope.loginEmail != null}">
+              <div class="tag_button">
+                  <p><a href="/member/find">비밀번호변경</a></p>
+              </div>
+              <div class="tag_button">
+                  <p><a href="/member/delete">회원탈퇴</a></p>
+              </div>
+              <div class="tag_button">
+                  <p><a href="/member/logout">로그아웃</a></p>
+              </div>
+          </c:if>
       </div>
   </div>
       
@@ -229,28 +232,6 @@
       </form>
       <button onclick="clearAllRadioButtons()">체크박스 초기화</button>
   </div>
-   <script>
-		function clearAllRadioButtons() {
-			var radioButtons = document.querySelectorAll('input[type="radio"]');
-			for (var i = 0; i < radioButtons.length; i++) {
-				radioButtons[i].checked = false;
-			}
-		}
-	</script>
-   
-   <div id="container">
-    <p>Select your favorite programming language:</p>
-    <div>
-    <input type="radio" id="java" name="language" value="java" 체크>
-    <label for="java">Java</label>
- 
-    <input type="radio" id="cpp" name="language" value="cpp">
-    <label for="cpp">C++</label>
- 
-    <input type="radio" name="language" value="python">
-    <label for="python">Python</label>
-    </div>
-    <button id="submit">Submit</button>
 </div>
 
  
@@ -259,8 +240,7 @@
     <p>Copyright ⓒ 2023 JustMusic. All rights reserved</p>
     <p>JustListen 사이트 내의 모든 서비스는 영리를 목적으로 하지 아니합니다.</p> 
   </footer>
-  
-  
+
 <script src="/resources/js/jquery-3.7.0.js"></script>  
 <script >
 // 헤더 / 서치팝업
@@ -270,7 +250,13 @@ $(".header .icon-login").click(function() {
 $(".mypage_pop .fa-times-circle").click(function() {
     $(".mypage_pop").fadeOut();
 });
-</script>
 
+function clearAllRadioButtons() {
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+    for (var i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].checked = false;
+    }
+}
+</script>
 </body>
 </html>

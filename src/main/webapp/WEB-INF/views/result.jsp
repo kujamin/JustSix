@@ -39,19 +39,28 @@
           <i class="fa fa-times-circle"></i>
       </div>
       <div class="mypage_name">
-          <p class="my-email">${sessionScope.loginEmail}</p>
+          <c:if test="${sessionScope.loginEmail != null}">
+              <p class="my-email">${sessionScope.loginEmail}</p>
+          </c:if>
       </div>
       <div class="underline"></div>
       <div class="mypage_btn">
-          <div class="tag_button">
-              <p><a href="/member/find">비밀번호변경</a></p>
-          </div>         
-          <div class="tag_button">
-              <p><a href="/member/delete">회원탈퇴</a></p>
-          </div>
-          <div class="tag_button">
-              <p><a href="#">로그아웃</a></p>
-          </div>
+          <c:if test="${sessionScope.loginEmail == null}">
+              <div class="tag_button">
+                  <p><a href="/member/login">로그인</a></p>
+              </div>
+          </c:if>
+          <c:if test="${sessionScope.loginEmail != null}">
+              <div class="tag_button">
+                  <p><a href="/member/find">비밀번호변경</a></p>
+              </div>
+              <div class="tag_button">
+                  <p><a href="/member/delete">회원탈퇴</a></p>
+              </div>
+              <div class="tag_button">
+                  <p><a href="/member/logout">로그아웃</a></p>
+              </div>
+          </c:if>
       </div>
   </div>
 
