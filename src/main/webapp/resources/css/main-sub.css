@@ -367,7 +367,7 @@ form .payment-plan input:checked+label:after,
 
 .lyric p {
   width: 50%;
-  height: 200px;
+  height: 30%;
   overflow-y: scroll;
   margin: 50px auto;
   text-align: center;

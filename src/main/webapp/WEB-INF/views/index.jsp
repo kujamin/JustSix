@@ -22,28 +22,22 @@
     </div>
     <div class="section desktopOnly" id="section2" data-disable="down">
       <div class="img sec02_img">
-        <img src="/resources/img/intro/ex01.jpg" alt="capture01">
+        <img src="/resources/img/intro/ex01.png" alt="capture01">
       </div>
       <div class="desc sec02_desc">
         <p>
-          찾고싶은 노래의 키워드를 선택해주세요<br> Lorem ipsum dolor sit amet
-          consectetur, adipisicing elit.<br> Ullam eos ipsam aut modi
-          necessitatibus blanditiis!<br> Fuga quis illo necessitatibus
-          minus!
+                          당신의 취향이 담긴 키워드 2~3가지를 골라 주세요!
         </p>
       </div>
     </div>
     <div class="section" id="section3">
       <div class="desc sec03_desc">
         <p>
-          로그인하면 ~할 수 있어요 로그인 하실래요?<br> Lorem ipsum dolor sit amet
-          consectetur, adipisicing elit.<br> Ullam eos ipsam aut modi
-          necessitatibus blanditiis!<br> Fuga quis illo necessitatibus
-          minus!
+                         당신의 취향에 쏙 맞는 노래를 찾아드립니다!
         </p>
       </div>
       <div class="img sec03_img">
-        <img src="/resources/img/intro/ex01.jpg" alt="capture01">
+        <img src="/resources/img/intro/ex02.png" alt="capture01">
       </div>
     </div>
     <div class="section" id="section4">

@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/resources/css/login.css">
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="/resources/js/jquery-3.7.0.js"></script>
 <title>회원탈퇴</title>
 </head>
 <body>
@@ -33,7 +33,7 @@
 					<p class="input-title">비밀번호 확인</p>
 					<label for="password"> 
 					<input name="password" id="password" type="password"
-						class="size wide" required>
+						class="size wide" required placeholder="비밀번호를 입력해주세요">
 						<span class="error-message" id="password_error"></span>
 					</label>
 

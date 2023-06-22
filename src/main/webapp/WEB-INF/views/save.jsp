@@ -9,7 +9,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/resources/css/login.css">
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="/resources/js/jquery-3.7.0.js"></script>
 <title>회원가입</title>
 </head>
 <body>
@@ -26,13 +26,13 @@
           <!--로그인 폼-->
           <p class="input-title">E-mail</p>
           <label> <input type="email" name="email" id="email"
-            placeholder="example@naver.com" class="size" required="required">
+            placeholder="이메일 주소를 입력해주세요" class="size" required="required">
             <input onclick = "fn_idChk();" type="button" value="중복확인 " class="btn">
           </label>
           <!--이메일 인증번호 입력-->
           <p class="input-title">E-mail 인증번호 입력</p>
           <label> <input type="text" class="size numberOnly" name="checkInput" id="checkInput"
-            placeholder="인증번호 6자리를 입력해주세요!" maxlength="6" required>
+            placeholder="인증번호 6자리를 입력해주세요" maxlength="6" required>
             <input type="button" id="mail-Check-Btn" value="인증번호 전송 "
             class="btn"> <span 
             id="mail-check-warn"></span>
@@ -43,7 +43,7 @@
           <!--비밀번호-->
           <p class="input-title">Password</p>
           <label for="password"> <input
-            placeholder="비밀번호는 8이상 12자 이하로 설정바랍니다." type="password"
+            placeholder="비밀번호는 8이상 12자 이하로 설정바랍니다" type="password"
             class="size wide" id="password" name="password" required>
             <span class="error-message" id="password_error"></span>
           </label>
@@ -52,7 +52,7 @@
           <p class="input-title">Password확인</p>
           <label for="confirm_password"> <input type="password"
             class="size wide" id="confirm_password" name="confirm_password"
-            required oninput="validateForm()"> <span
+            required oninput="validateForm()" placeholder="비밀번호를 다시 한번 입력하세요"> <span
             class="error-message" id="confirm_password_error"></span>
           </label>
           <!--이름-->
