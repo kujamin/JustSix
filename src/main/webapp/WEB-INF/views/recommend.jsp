@@ -241,22 +241,7 @@
     <p>JustListen 사이트 내의 모든 서비스는 영리를 목적으로 하지 아니합니다.</p> 
   </footer>
 
-<script src="/resources/js/jquery-3.7.0.js"></script>  
-<script >
-// 헤더 / 서치팝업
-$(".header .icon-login").click(function() {
-    $(".mypage_pop").fadeToggle();
-});
-$(".mypage_pop .fa-times-circle").click(function() {
-    $(".mypage_pop").fadeOut();
-});
-
-function clearAllRadioButtons() {
-    var radioButtons = document.querySelectorAll('input[type="radio"]');
-    for (var i = 0; i < radioButtons.length; i++) {
-        radioButtons[i].checked = false;
-    }
-}
-</script>
+  <script src="/resources/js/jquery-3.7.0.js"></script>
+  <script src="/resources/js/recommend.js"></script>
 </body>
 </html>
