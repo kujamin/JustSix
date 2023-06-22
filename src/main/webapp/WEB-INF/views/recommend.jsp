@@ -1,21 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hbi
-  Date: 2023-06-09
-  Time: 오전 10:16
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
 <link rel="stylesheet" type="text/css" href="/resources/css/main-sub.css" />
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css"/>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
     <title>키워드 선택</title>
 </head>
 <body>
-
   <header class="header">
     <div class="header-con">
       <div class="logo">
@@ -26,36 +18,39 @@
       <div class="login">
         <img class="icon-login" alt="login"
           src="/resources/img/intro/icon-login.png">
-        
       </div>
-      
     </div>
   </header>
-
-      
   <!-- 팝업 -->
   <div class="mypage_pop">
       <div class="close">
           <i class="fa fa-times-circle"></i>
       </div>
       <div class="mypage_name">
-          <p class="my-email">${sessionScope.loginEmail}</p>
+          <c:if test="${sessionScope.loginEmail != null}">
+              <p class="my-email">${sessionScope.loginEmail}</p>
+          </c:if>
       </div>
       <div class="underline"></div>
       <div class="mypage_btn">
-          <div class="tag_button">
-              <p><a href="/member/find">비밀번호변경</a></p>
-          </div>         
-          <div class="tag_button">
-              <p><a href="/member/delete">회원탈퇴</a></p>
-          </div>
-          <div class="tag_button">
-              <p><a href="#">로그아웃</a></p>
-          </div>
+          <c:if test="${sessionScope.loginEmail == null}">
+              <div class="tag_button">
+                  <p><a href="/member/login">로그인</a></p>
+              </div>
+          </c:if>
+          <c:if test="${sessionScope.loginEmail != null}">
+              <div class="tag_button">
+                  <p><a href="/member/find">비밀번호변경</a></p>
+              </div>
+              <div class="tag_button">
+                  <p><a href="/member/delete">회원탈퇴</a></p>
+              </div>
+              <div class="tag_button">
+                  <p><a href="/member/logout">로그아웃</a></p>
+              </div>
+          </c:if>
       </div>
   </div>
-      
-  
   <div class="container">
   <div class="wrap">
   <h1 style="text-align: center; margin:50px 0 0 0;  ">키워드를 선택해주세요</h1>
