@@ -130,7 +130,7 @@
 
   <footer class="footer">
     <p>Copyright ⓒ 2023 JustMusic. All rights reserved</p>
-    <p>JustListen 사이트 내의 모든 서비스는 영리를 목적으로 하지 아니합니다.</p> 
+    <p>JustListen 사이트 내의 모든 서비스는 영리를 목적으로 하지 않습니다.</p> 
   </footer>
   
 

@@ -21,29 +21,39 @@
       </div>
     </div>
     <div class="section desktopOnly" id="section2" data-disable="down">
-      <div class="img sec02_img">
-        <img src="/resources/img/intro/ex01.png" alt="capture01">
+      <div class="img01 sec02_img">
+        <img src="/resources/img/intro/cap01.jpg" alt="capture01">
       </div>
+      <div class="img02 sec02_img">
+        <img src="/resources/img/intro/cap02.jpg" alt="capture01">
+      </div>
+      <div class="img03 sec02_img">
+        <img src="/resources/img/intro/cap03.jpg" alt="capture01">
+      </div>
+    </div>
       <div class="desc sec02_desc">
         <p>
                           당신의 취향이 담긴 키워드 2~3가지를 골라 주세요!
         </p>
       </div>
-    </div>
     <div class="section" id="section3">
+      <div class="img sec03_img">
+        <img src="/resources/img/intro/intro-gif.gif" alt="capture01">
+      </div>
       <div class="desc sec03_desc">
         <p>
                          당신의 취향에 쏙 맞는 노래를 찾아드립니다!
         </p>
       </div>
-      <div class="img sec03_img">
-        <img src="/resources/img/intro/ex02.png" alt="capture01">
-      </div>
     </div>
     <div class="section" id="section4">
       <div class="sec04_btn_wrap">
-        <div class="button intro-button">
+      
+        <div class="button intro-button intro-now">
           <a href="/music/recommend">바로시작하기</a>
+        </div>
+        <div class="button intro-button intro-login">
+          <a href="/member/login">로그인 후 시작하기</a>
         </div>
       </div>
     </div>
@@ -52,7 +62,7 @@
 
   <script type="text/javascript" src="/resources/js/fullpage.js"></script>
 
-  <script type="text/javascript">
+  <script>
     var myFullpage = new fullpage('#fullpage', {
       sectionsColor : [ '#fff', '#fff', '#fff', 'fff', '#fff' ],
       anchors : [ 'firstPage', 'secondPage', '3rdPage', '4thpage',
