@@ -20,22 +20,21 @@
         <p>Just Listen</p>
       </div>
     </div>
-    <div class="section desktopOnly" id="section2" data-disable="down">
-      <div class="img01 sec02_img">
-        <img src="/resources/img/intro/cap01.jpg" alt="capture01">
-      </div>
-      <div class="img02 sec02_img">
-        <img src="/resources/img/intro/cap02.jpg" alt="capture01">
-      </div>
-      <div class="img03 sec02_img">
-        <img src="/resources/img/intro/cap03.jpg" alt="capture01">
-      </div>
-    </div>
-      <div class="desc sec02_desc">
-        <p>
-                          당신의 취향이 담긴 키워드 2~3가지를 골라 주세요!
-        </p>
-      </div>
+		<div class="section" id="section2">
+		    <div class="cap_wrqp">
+		        <div class="sec02_cap">
+		            <div class="sec02_img">
+		              <img class="img01" src="/resources/img/intro/cap01.jpg" alt="capture01" />
+		            </div>
+		            <div class="sec02_img">
+		              <img class="img02" src="/resources/img/intro/cap02.jpg" alt="capture01" />
+		            </div>
+		        </div>
+		    </div>
+		    <div class="desc sec02_desc">
+		        <p>당신의 취향이 담긴 키워드 2~3가지를 골라 주세요!</p>
+		    </div>
+		</div>
     <div class="section" id="section3">
       <div class="img sec03_img">
         <img src="/resources/img/intro/intro-gif.gif" alt="capture01">
@@ -50,10 +49,10 @@
       <div class="sec04_btn_wrap">
       
         <div class="button intro-button intro-now">
-          <a href="/music/recommend">바로시작하기</a>
+          <a href="/music/recommend"><p>바로시작하기</p></a>
         </div>
         <div class="button intro-button intro-login">
-          <a href="/member/login">로그인 후 시작하기</a>
+          <a href="/member/login"><p>로그인 후 시작하기</p></a>
         </div>
       </div>
     </div>
